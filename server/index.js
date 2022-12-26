@@ -1,15 +1,11 @@
 const express = require('express');
 const app = express();
-const sql = require('mssql');
-const path = require('path');
-const plantsRouter = require('./routes/plants');
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'client', 'index.html'));
-});
+const plantsRouter = require('./routes/plants.js');
 
+app.use(express.static('client'));
 app.use('/plants', plantsRouter);
 
-
-app.listen(3000, () => {
-  console.log('Server listening on port 3000');
+const port =  3000;
+app.listen(port, () => {
+  console.log(`Listening on port ${port}...`);
 });

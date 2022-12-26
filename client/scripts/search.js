@@ -1,18 +1,24 @@
-const searchForm = document.querySelector('#search-form');
-const searchInput = document.querySelector('#search-input');
-const results = document.querySelector('#search-results');
+const form = document.getElementById('search-form');
+const input = document.getElementById('search-input');
+const resultsDiv = document.getElementById('search-results');
 
-searchForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const searchTerm = searchInput.value;
-  fetch(`/plants/search?q=${searchTerm}`)
-.then((response) => response.json())
-    .then((data) => {
-      results.innerHTML = '';
-      data.forEach((plant) => {
-        const p = document.createElement('p');
-        p.textContent = `${plant.name} - ${plant.description}`;
-        results.appendChild(p);
-      });
-    });
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const searchTerm = input.value;
+  input.value = '';
+  const searchResults = await fetch(`/plants/search?q=${searchTerm}`).then(res => res.json());
+  displayResults(searchResults);
 });
+
+function displayResults(results) {
+  resultsDiv.innerHTML = '';
+  if (results.length === 0) {
+    resultsDiv.innerHTML = '<p>No results found.</p>';
+  } else {
+    for (const result of results) {
+      const resultDiv = document.createElement('div');
+      resultDiv.innerHTML = `<h3>${result.name}</h3><p>${result.description}</p>`;
+      resultsDiv.appendChild(resultDiv);
+    }
+  }
+}
