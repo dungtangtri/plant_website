@@ -17,7 +17,9 @@ function displayResults(results) {
   } else {
     for (const result of results) {
       const resultDiv = document.createElement('div');
-      resultDiv.innerHTML = `<h3>${result.name}</h3><p>${result.description}</p>`;
+      resultDiv.innerHTML = 
+      `<h3>${result['Name']}</h3>
+      <p>${result['Dạng sống']}</p>`;
       resultsDiv.appendChild(resultDiv);
     }
   }
