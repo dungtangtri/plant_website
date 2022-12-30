@@ -31,7 +31,6 @@ router.post('/login', (req, res) => {
       res.sendStatus(500);
       return;
     }
-
     if (result.recordset.length > 0) {
       // Email and password are correct, log in the user
       req.session.loggedIn = true;

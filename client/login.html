@@ -1,44 +1,86 @@
+<!DOCTYPE html>
+<html>
+
 <head>
-    <link rel="stylesheet" href="login.css">
-  </head>
-<form id="login-form">
-    <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email"><br>
-    <label for="password">Password:</label><br>
-    <input type="password" id="password" name="password"><br><br>
-    <button type="submit">Log In</button>
-  </form>
-  <div id="success-message"></div>
-  <div id="error-message"></div>
-  
-  <script>
-    const form = document.querySelector('#login-form');
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-  
-      const email = form.elements.email.value;
-      const password = form.elements.password.value;
-  
-      fetch('/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          if (data.success) {
-            const successMessage = document.querySelector('#success-message');
-            successMessage.textContent = data.message;
-            // Login successful, redirect to homepage
-            window.location.replace('/');
-          } else {
-            // Login failed, display error message
-            const errorMessage = document.querySelector('#error-message');
-            errorMessage.textContent = data.message;
-          }
-        });
-    });
-  </script>
-  
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <title>Login Page</title>
+  <!--Made with love by Mutiullah Samim -->
+
+  <!--Bootsrap 4 CDN-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <!--Fontawesome CDN-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+  <!--Custom styles-->
+  <link rel="stylesheet" type="text/css" href="login.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="d-flex justify-content-center h-100">
+      <div class="card">
+        <div class="card-header">
+          <h3>Sign In</h3>
+        </div>
+        <div class="card-body">
+          <form id="login-form">
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+              </div>
+              <input type="email" class="form-control" id="email" placeholder="email">
+            </div>
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-key"></i></span>
+              </div>
+              <input type="password" class="form-control" id="password" placeholder="password">
+            </div>
+            <div class="form-group">
+              <input type="submit" value="Login" class="btn float-right login_btn">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<div id="success-message"></div>
+<div id="error-message"></div>
+
+</html>
+<script>
+  const form = document.querySelector('#login-form');
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const email = form.elements.email.value;
+    const password = form.elements.password.value;
+
+    fetch('/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          const successMessage = document.querySelector('#success-message');
+          successMessage.textContent = data.message;
+          // Login successful, redirect to homepage
+          window.location.replace('/');
+        } else {
+          // Login failed, display error message
+          const errorMessage = document.querySelector('#error-message');
+          errorMessage.textContent = data.message;
+        }
+      });
+  });
+</script>
