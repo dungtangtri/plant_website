@@ -45,13 +45,16 @@
               <input type="submit" value="Login" class="btn float-right login_btn">
             </div>
           </form>
+          <div class="message-group">
+            <div id="success-message"></div>
+            <div id="error-message"></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </body>
-<div id="success-message"></div>
-<div id="error-message"></div>
+
 
 </html>
 <script>
@@ -75,12 +78,18 @@
           const successMessage = document.querySelector('#success-message');
           successMessage.textContent = data.message;
           // Login successful, redirect to homepage
-          window.location.replace('/');
+          setTimeout(() => {
+            window.location.replace('/');
+          }, 3000);
+
         } else {
           // Login failed, display error message
           const errorMessage = document.querySelector('#error-message');
           errorMessage.textContent = data.message;
         }
-      });
+      })
+      .catch(error => {
+        console.log(error);
+      })
   });
 </script>

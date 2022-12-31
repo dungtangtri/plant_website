@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const session = require('express-session');
+const path = require('path');
 const plantsRouter = require('./routes/plants');
 const loginRouter = require('./routes/login');
 

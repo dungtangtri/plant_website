@@ -34,7 +34,7 @@ router.post('/login', (req, res) => {
     if (result.recordset.length > 0) {
       // Email and password are correct, log in the user
       req.session.loggedIn = true;
-      res.send({ success: true, message: 'Log in success, redirecting you to homepage' });
+      res.send({ success: true, message: 'Log in success, redirecting you to homepage in 3 seconds' });
     } else {
       // Email and password are incorrect, return error message
       res.send({ success: false, message: 'Invalid email or password' });
