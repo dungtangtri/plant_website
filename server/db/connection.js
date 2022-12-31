@@ -19,7 +19,6 @@ connection.connect().then(() => {
   console.log('Connected to database');
 }).catch((err) => {
   console.error(err);
-  setTimeout(connection, 5000);
 });
 
 module.exports = connection;
