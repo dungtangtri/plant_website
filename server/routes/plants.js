@@ -9,10 +9,12 @@ async function searchPlants(searchTerm) {
     await connection.connect();
     // Define the SQL query
     const query = `
-    SELECT *
-    FROM plants
-    WHERE CONTAINS(Name, N'${searchTerm}')
-  `;
+    SELECT * 
+    FROM plants 
+    WHERE FREETEXT(Name, N'${searchTerm}')
+
+
+ `;
     const result = await connection.request()
       .input('searchTerm', sql.NVarChar, `%${searchTerm}%`)
       .query(query);
