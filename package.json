@@ -1,0 +1,27 @@
+{
+  "name": "ky_thuat_phan_mem_ung_dung",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dungtangtri/Ky_thuat_phan_mem_ung_dung.git"
+  },
+  "author": "Tang Tri Dung",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dungtangtri/Ky_thuat_phan_mem_ung_dung/issues"
+  },
+  "homepage": "https://github.com/dungtangtri/Ky_thuat_phan_mem_ung_dung#readme",
+  "dependencies": {
+    "connect-mssql-v2": "^2.0.2",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mssql": "^7.2.0",
+    "path": "^0.12.7"
+  }
+}
