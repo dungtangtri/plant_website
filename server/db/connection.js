@@ -1,5 +1,6 @@
 const sql = require('mssql');
 const dotenv = require('dotenv').config();
+
 const config = {
   user: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
@@ -15,11 +16,16 @@ connection.on('error', (err) => {
   console.error(err);
 });
 
-connection.connect().then(() => {
+function DBConnect () {
+  connection.connect().then(() => {
   console.log('Connected to database');
 }).catch((err) => {
   console.error(err);
+  setTimeout(DBConnect, 5000);
+})
+};
+DBConnect();
 
-});
 
-module.exports = connection;
+module.exports.config = config;
+module.exports.connection = connection;
