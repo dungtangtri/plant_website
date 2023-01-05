@@ -2,7 +2,7 @@ const form = document.querySelector('#login-form');
   form.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    const email = form.elements.email.value;
+    const username = form.elements.username.value;
     const password = form.elements.password.value;
 
     fetch('/login', {
@@ -10,7 +10,7 @@ const form = document.querySelector('#login-form');
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ username, password }),
     })
       .then((response) => response.json())
       .then((data) => {

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-const connection = require('../db/connection');
+const connection = require('../db/connection').connection;
 
 async function DBlogin() {
   try {
@@ -15,13 +15,14 @@ async function DBlogin() {
 router.post('/login', (req, res) => {
   DBlogin();
   console.log(req.body);
-  const { email, password } = req.body;
+  const { username, password } = req.body;
+
 
   // Query database to verify email and password
   const query = `
     SELECT *
     FROM users
-    WHERE Email = '${email}' AND Password = '${password}'
+    WHERE Username = '${username}' AND Password = '${password}'
   `;
 
   const request = connection.request();
@@ -37,7 +38,7 @@ router.post('/login', (req, res) => {
       res.send({ success: true, message: 'Log in success, redirecting you to homepage in 3 seconds' });
     } else {
       // Email and password are incorrect, return error message
-      res.send({ success: false, message: 'Invalid email or password' });
+      res.send({ success: false, message: 'Invalid username or password' });
     }
   })
 })
