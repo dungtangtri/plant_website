@@ -16,16 +16,18 @@ connection.on('error', (err) => {
   console.error(err);
 });
 
-function DBConnect () {
-  connection.connect().then(() => {
-  console.log('Connected to database');
-}).catch((err) => {
-  console.error(err);
-  setTimeout(DBConnect, 5000);
-})
+async function DBlogin() {
+  try {
+    await connection.connect();
+    console.log('Connected to the database');
+  }
+  catch (error) {
+    console.log(error);
+    setTimeout(DBlogin, 5000);
+  }
 };
-DBConnect();
+DBlogin();
 
-
+module.exports.DBlogin = DBlogin;
 module.exports.config = config;
 module.exports.connection = connection;

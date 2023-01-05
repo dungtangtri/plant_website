@@ -18,10 +18,13 @@
   "homepage": "https://github.com/dungtangtri/Ky_thuat_phan_mem_ung_dung#readme",
   "dependencies": {
     "connect-mssql-v2": "^3.1.4",
+    "crypto": "^1.0.1",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "mssql": "^7.2.0",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
     "path": "^0.12.7"
   }
 }
