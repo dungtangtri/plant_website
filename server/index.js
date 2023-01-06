@@ -10,6 +10,8 @@ const DBconfig = require('./db/connection').config;
 const plantsRouter = require('./routes/plants');
 const loginRouter = require('./routes/login');
 
+app.use(express.json());
+express.urlencoded({ extended: true });
 
 const options = {
   ttl: 1000 * 60 * 60 * 24,
@@ -29,14 +31,10 @@ app.use(
   }));
 
 
-app.use(express.json());
-express.urlencoded({ extended: true });
-
 app.use(express.static('client'));
 
 require('./routes/lib/passport.js');
-app.use(passport.initialize());
-app.use(passport.session());
+
 
 app.use('/plants', plantsRouter);
 app.use('/', loginRouter);

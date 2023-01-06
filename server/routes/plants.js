@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const sql = require('mssql');
 
-const connection = require('../db/connection');
+const connection = require('../db/connection').connection;
 
 async function searchPlants(searchTerm) {
   try {
