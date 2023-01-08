@@ -2,13 +2,14 @@ const express = require('express');
 const session = require('express-session');
 const MSSQLStore = require('connect-mssql-v2');
 const app = express();
-const passport = require('passport');
 const path = require('path');
 const dotenv = require('dotenv').config();
 
 const DBconfig = require('./db/connection').config;
 const plantsRouter = require('./routes/plants');
 const loginRouter = require('./routes/login');
+const adminRouter = require('./routes/admin');
+const registerRouter = require('./routes/register');
 
 app.use(express.json());
 express.urlencoded({ extended: true });
@@ -38,9 +39,16 @@ require('./routes/lib/passport.js');
 
 app.use('/plants', plantsRouter);
 app.use('/', loginRouter);
+app.use('/', adminRouter);
 
+app.use('/logout', (req, res, next) => {
+  req.logout(function(err) {
+    if (err) { return next(err); }
+    res.redirect('/');
+  });
+});
 
-
+app.use('/', registerRouter);
 
 
 

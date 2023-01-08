@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="register.css">
+</head>
+
+<body>
+
+    <form id="register-form">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" aria-describedby="usernameHelp"
+                placeholder="Enter username">
+            <small id="usernameHelp" class="form-text text-muted">Choose a unique and memorable username.</small>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <div class="message-group">
+        <div id="error-message"></div>
+        <div id="success-message"></div>
+
+    </div>
+</body>
+
+</html>
+<script src="./scripts/userRegister.js"></script>
