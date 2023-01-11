@@ -6,7 +6,7 @@ form.addEventListener('submit', async (e) => {
   e.preventDefault();
   const searchTerm = input.value;
   input.value = '';
-  const searchResults = await fetch(`/plants/search?q=${searchTerm}`).then(res => res.json());
+  const searchResults = await fetch(`/search?q=${searchTerm}`).then(res => res.json());
   displayResults(searchResults);
 });
 

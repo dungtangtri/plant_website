@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-
+const path = require('path');
 const isAdmin = (req, res, next) => {
     if (req.isAuthenticated() && req.user.username == 'admin') {
         next();
     } else {
-        res.status(401).json({ msg: 'You are not authorized to view this resource because you are not an admin.' });
+        res.status(401).sendFile(path.join(__dirname, "../../client/404.html"));;
     }
 };
 

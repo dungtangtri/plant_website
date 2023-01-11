@@ -4,10 +4,6 @@ const path = require('path');
 const passport = require('passport');
 
 
-// Use Passport to authenticate the login request
-router.use(passport.initialize());
-router.use(passport.session());
-
 // Define the login route
 router.post('/login', (req, res, next) => {
   console.log(req.body);
@@ -26,7 +22,9 @@ router.post('/login', (req, res, next) => {
       req.session.loggedIn = true;
       return res.send({ success: true, message: 'Login success, redirecting you to homepage in 3 seconds' });
     });
-  })(req, res, next);
+  })
+  
+  (req, res, next);
 });
 
 

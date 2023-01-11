@@ -4,12 +4,14 @@ const MSSQLStore = require('connect-mssql-v2');
 const app = express();
 const path = require('path');
 const dotenv = require('dotenv').config();
-
+const passport = require('passport');
 const DBconfig = require('./db/connection').config;
 const plantsRouter = require('./routes/plants');
 const loginRouter = require('./routes/login');
 const adminRouter = require('./routes/admin');
 const registerRouter = require('./routes/register');
+
+
 
 app.use(express.json());
 express.urlencoded({ extended: true });
@@ -30,14 +32,18 @@ app.use(
       maxAge: 1000 * 60 * 60 * 24,
     }
   }));
-
+ 
 
 app.use(express.static('client'));
 
+
+
 require('./routes/lib/passport.js');
+app.use(passport.initialize());
+app.use(passport.session());
 
 
-app.use('/plants', plantsRouter);
+app.use('/', plantsRouter);
 app.use('/', loginRouter);
 app.use('/', adminRouter);
 
@@ -49,8 +55,6 @@ app.use('/logout', (req, res, next) => {
 });
 
 app.use('/', registerRouter);
-
-
 
 
 
