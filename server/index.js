@@ -10,7 +10,7 @@ const plantsRouter = require('./routes/plants');
 const loginRouter = require('./routes/login');
 const adminRouter = require('./routes/admin');
 const registerRouter = require('./routes/register');
-
+const logoutRouter = require('./routes/logout');
 
 
 app.use(express.json());
@@ -23,13 +23,12 @@ const options = {
 
 app.use(
   session({
-
     store: new MSSQLStore(DBconfig, options),
     secret: process.env.SESSION_KEY,
     resave: false,
     saveUninitialized: true,
     cookie : {
-      maxAge: 1000 * 60 * 60 * 24,
+      maxAge: 1000 * 60 * 60 * 24, // 24 hours
     }
   }));
  
@@ -46,14 +45,7 @@ app.use(passport.session());
 app.use('/', plantsRouter);
 app.use('/', loginRouter);
 app.use('/', adminRouter);
-
-app.use('/logout', (req, res, next) => {
-  req.logout(function(err) {
-    if (err) { return next(err); }
-    res.redirect('/');
-  });
-});
-
+app.use('/',logoutRouter );
 app.use('/', registerRouter);
 
 
