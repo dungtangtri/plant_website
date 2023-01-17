@@ -5,13 +5,16 @@ const app = express();
 const path = require('path');
 const dotenv = require('dotenv').config();
 const passport = require('passport');
+const fileUpload = require('express-fileupload');
+
+
 const DBconfig = require('./db/connection').config;
 const plantsRouter = require('./routes/plants');
 const loginRouter = require('./routes/login');
 const adminRouter = require('./routes/admin');
 const registerRouter = require('./routes/register');
 const logoutRouter = require('./routes/logout');
-
+const uploadRouter = require('./routes/uploadPics');
 
 app.use(express.json());
 express.urlencoded({ extended: true });
@@ -27,11 +30,19 @@ app.use(
     secret: process.env.SESSION_KEY,
     resave: false,
     saveUninitialized: true,
-    cookie : {
+    cookie: {
       maxAge: 1000 * 60 * 60 * 24, // 24 hours
     }
   }));
- 
+  
+app.use(
+  fileUpload({
+    limits: {
+      fileSize: 10000000,
+    },
+    abortOnLimit: true,
+  })
+);
 
 app.use(express.static('client'));
 
@@ -45,9 +56,9 @@ app.use(passport.session());
 app.use('/', plantsRouter);
 app.use('/', loginRouter);
 app.use('/', adminRouter);
-app.use('/',logoutRouter );
+app.use('/', logoutRouter);
 app.use('/', registerRouter);
-
+app.use('/', uploadRouter);
 
 
 app.get('*', (req, res) => {
