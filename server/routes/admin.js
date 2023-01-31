@@ -12,10 +12,9 @@ const isAdmin = (req, res, next) => {
     }
 };
 
-router.get('/admin', isAdmin, (req, res, next) => {
+router.get('/admin', isAdmin, (req, res) => {
     res.send('Admin route ');
 });
 
-
-
 module.exports = router;
+module.exports.isAdmin = isAdmin;

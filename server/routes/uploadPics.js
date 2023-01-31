@@ -4,8 +4,10 @@ const path = require('path');
 const fileUpload = require('express-fileupload');
 const connection = require('../db/connection').connection;
 const sql = require('mssql');
+const isAdmin = require('./admin').isAdmin;
 
-router.post('/upload', (req, res) => {
+
+router.post('/upload', isAdmin , (req, res) => {
     try {
         // Get the file that was set to our field named "image"
         const { image } = req.files;
@@ -34,7 +36,7 @@ router.post('/upload', (req, res) => {
 
 });
 
-router.get('/upload', function (req, res) {
+router.get('/upload', isAdmin , (req, res) => {
     res.sendFile(path.join(__dirname, '../../client/upload.html'));
 });
 
