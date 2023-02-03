@@ -18,8 +18,8 @@ router.post('/upload', isAdmin , (req, res) => {
         let imageBuffer = new Buffer.from(image.data);
         console.log(imageBuffer);
         const request = connection.request();
-        request.input('imageBuffer', sql.VarBinary(imageBuffer))
-        request.query(`INSERT INTO plants_img (img) VALUES (CONVERT(varbinary(max), @imageBuffer))`,
+        request.input('imageBuffer', sql.VarBinary, imageBuffer);
+        request.query('INSERT INTO plants_img (img) VALUES (CONVERT(varbinary(max), @imageBuffer))',
              (err, result) => {
                 if (err) console.log(err);
                 else {

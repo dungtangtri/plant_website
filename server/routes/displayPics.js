@@ -14,9 +14,9 @@ router.get('/images/:id', (req, res) => {
                 res.status(500).send('Error retrieving image from database');
             } else {
                 const image = result.recordset[0].img.toString('base64');
-                console.log(image);
+                const binaryData = Buffer.from(image, 'base64');
                 res.contentType('image/jpeg');
-                res.send(image);
+                res.send(binaryData);
             }
         });
     });
