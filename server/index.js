@@ -65,7 +65,7 @@ app.get('*', (req, res) => {
   res.status(404).sendFile(path.join(__dirname, "../client/404.html"));
 });
 
-const port = 3000;
+const port = 8080;
 app.listen(port, () => {
   console.log(`Listening on port ${port}...`);
 });
