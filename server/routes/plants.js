@@ -7,17 +7,9 @@ const connection = require('../db/connection').connection;
 async function searchPlants(searchTerm) {
   try {
     await connection.connect();
-    // Define the SQL query
-    const query = `
-    SELECT * 
-    FROM plants 
-    WHERE FREETEXT(Name, N'${searchTerm}')
-
-
- `;
     const result = await connection.request()
-      .input('searchTerm', sql.NVarChar, `%${searchTerm}%`)
-      .query(query);
+      .input('searchTerm', sql.NVarChar, searchTerm)
+      .query('SELECT * FROM plants WHERE FREETEXT(Name, @searchTerm)');
     return result.recordset;
   } catch (err) {
     console.error(err);

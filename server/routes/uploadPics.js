@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-const fileUpload = require('express-fileupload');
 const connection = require('../db/connection').connection;
 const sql = require('mssql');
 const isAdmin = require('./admin').isAdmin;

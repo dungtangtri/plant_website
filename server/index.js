@@ -15,7 +15,7 @@ const adminRouter = require('./routes/admin');
 const registerRouter = require('./routes/register');
 const logoutRouter = require('./routes/logout');
 const uploadRouter = require('./routes/uploadPics');
-
+const displayPics = require('./routes/displayPics');
 app.use(express.json());
 express.urlencoded({ extended: true });
 
@@ -59,7 +59,7 @@ app.use('/', adminRouter);
 app.use('/', logoutRouter);
 app.use('/', registerRouter);
 app.use('/', uploadRouter);
-
+app.use('/', displayPics);
 
 app.get('*', (req, res) => {
   res.status(404).sendFile(path.join(__dirname, "../client/404.html"));
