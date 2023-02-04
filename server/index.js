@@ -44,7 +44,7 @@ app.use(
   })
 );
 
-app.use(express.static('client'));
+app.use(express.static('Homepage'));
 
 
 

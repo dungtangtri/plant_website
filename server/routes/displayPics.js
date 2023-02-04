@@ -13,7 +13,7 @@ router.get('/images/:id', (req, res) => {
                 console.log(err);
                 res.status(500).send('Error retrieving image from database');
             } else {
-                const image = result.recordset[0].img.toString('base64');
+                const image = result.recordset[0].img;
                 const binaryData = Buffer.from(image, 'base64');
                 res.contentType('image/jpeg');
                 res.send(binaryData);
