@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="assets/img/leaf.png" type="image/x-icon">
+
+    <!-- REMIX ICONS -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <title>Plant Website</title>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">
+                <img src="assets/img/leaf.png">Phu Tho Plant
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#login" class="nav__link">Log in</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#faqs" class="nav__link">FAQs</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">Contact us</a>
+                    </li>
+                </ul>
+
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+
+            <div class="nav__btns">
+                <!-- Theme change button -->
+                <i class="ri-moon-line change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="home" id="home"
+            style="background-image: url('assets/img/background.png'); background-position: center; background-size: cover;">
+            <!-- HOME -->
+            <div class="home__container container grid">
+                <img src="assets/img/home.png" alt="" class="home__img">
+
+                <div class="home__data">
+                    <h1 class="home__title">
+                        Find out more about plants in Phu Tho province!
+                    </h1>
+                </div>
+
+                <div class="home__search">
+                    <form action="search-result.html" class="search" id="search-bar">
+                        <input type="search" placeholder="Type something..." name="q" class="search__input">
+
+                        <div class="search__button" id="search--button">
+                            <i class="ri-search-2-line search__icon"></i>
+                            <i class="ri-close-line search__close"></i>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- LOGIN -->
+        <section class="login" id="login">
+            Login form
+        </section>
+
+        <!-- QUESTIONS -->
+        <section class="questions section" id="faqs">
+            <h2 class="section__title-right questions__title container">
+                Some common questions <br> were often asked
+            </h2>
+
+            <div class="questions__container container grid">
+                <div class="questions__item">
+                    <header class="questions__header">
+                        <i class="ri-add-line questions__icon"></i>
+                        <h3 class="questions__item-title">
+                            How do I search the plant?
+                        </h3>
+                    </header>
+
+                    <div class="questions__content">
+                        <p class="questions__description">
+                            You can search by inserting the name of the plant, its family names...
+                        </p>
+                    </div>
+                </div>
+
+                <div class="questions__item">
+                    <header class="questions__header">
+                        <i class="ri-add-line questions__icon"></i>
+                        <h3 class="questions__item-title">
+                            How do I add the plants?
+                        </h3>
+                    </header>
+
+                    <div class="questions__content">
+                        <p class="questions__description">
+                            You must ask the administrators to be given permissions to add.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="questions__item">
+                    <header class="questions__header">
+                        <i class="ri-add-line questions__icon"></i>
+                        <h3 class="questions__item-title">
+                            What language does I need to use to search?
+                        </h3>
+                    </header>
+
+                    <div class="questions__content">
+                        <p class="questions__description">
+                            You can use Vietnamese to search.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="contact section container" id="contact">
+            <div class="contact__container grid">
+                <div class="contact__box">
+                    <h2 class="section__title">
+                        Reach out to us today <br> via any of the given information
+                    </h2>
+
+                    <div class="contact__data">
+                        <div class="contact__information">
+                            <h3 class="contact__subtitle">Call us for instant support</h3>
+                            <span class="contact__description">
+                                <i class="ri-phone-line contact__icon"></i>
+                                +0123-456-789
+                            </span>
+                        </div>
+
+                        <div class="contact__information">
+                            <h3 class="contact__subtitle">Write us by mail</h3>
+                            <span class="contact__description">
+                                <i class="ri-mail-line contact-icon"></i>
+                                user@gmail.com
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <form action="" class="contact__form">
+                    <div class="contact__inputs">
+                        <div class="contact__content">
+                            <input type="email" placeholder="" class="contact__input">
+                            <label for="" class="contact__label">Email</label>
+                        </div>
+
+                        <div class="contact__content">
+                            <input type="text" placeholder="" class="contact__input">
+                            <label for="" class="contact__label">Subject</label>
+                        </div>
+
+                        <div class="contact__content contact__area">
+                            <textarea name="message" placeholder=" " class="contact__input"></textarea>
+                            <label for="" class="contact__label">Message</label>
+                        </div>
+                    </div>
+
+                    <button class="button button--flex">
+                        Send Message
+                        <i class="ri-arrow-right-up-line button__icon"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer section">
+        <div class="footer__container container grid">
+            <div class="footer__content">
+                <a href="#" class="footer__logo">
+                    <img src="assets/img/leaf.png">Phu Tho Plant
+                </a>
+
+                <h3 class="footer__title">
+                    Subscribe to our newsletter <br> to stay update
+                </h3>
+
+                <div class="footer__subscribe">
+                    <input type="email" placeholder="Enter your email" class="footer__input">
+
+                    <button class="button button--flex footer__button">
+                        Subscribe
+                        <i class="ri-arrow-right-up-line button__icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Our Address</h3>
+
+                <ul class="footer__data">
+                    <li class="footer__information">Ha Noi, Viet Nam</li>
+                    <li class="footer__information">HUST - Viet Nam</li>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Contact Us</h3>
+
+                <ul class="footer__data">
+                    <li class="footer__information">+0123-456-789</li>
+
+                    <div class="footer__social">
+                        <a href="https://www.facebook.com/" class="footer__social-link">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" class="footer__social-link">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="https://twitter.com/" class="footer__social-link">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!--=============== SCROLL UP ===============-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-fill scrollup__icon"></i>
+    </a>
+
+    <!--=============== SCROLL REVEAL ===============-->
+    <script src="assets/js/scrollreveal.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
