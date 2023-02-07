@@ -6,7 +6,7 @@ const path = require('path');
 const dotenv = require('dotenv').config();
 const passport = require('passport');
 const fileUpload = require('express-fileupload');
-
+const ejs = require('ejs');
 
 const DBconfig = require('./db/connection').config;
 const plantsRouter = require('./routes/plants');
@@ -16,9 +16,12 @@ const registerRouter = require('./routes/register');
 const logoutRouter = require('./routes/logout');
 const uploadRouter = require('./routes/uploadPics');
 const displayPics = require('./routes/displayPics');
+
+
 app.use(express.json());
 express.urlencoded({ extended: true });
 
+app.set('view engine', 'ejs');
 const options = {
   ttl: 1000 * 60 * 60 * 24,
   autoRemoveInterval: 1800, // check for expired sessions every 30 minutes
