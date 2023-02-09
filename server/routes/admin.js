@@ -8,7 +8,7 @@ const isAdmin = (req, res, next) => {
     if (req.isAuthenticated() && req.user.username == 'admin') {
         next();
     } else {
-        res.status(401).sendFile(path.join(__dirname, "../../client/404.html"));;
+        res.status(401).sendFile(path.join(__dirname, "../../views/404.html"));;
     }
 };
 

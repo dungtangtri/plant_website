@@ -5,7 +5,7 @@ const sql = require('mssql');
 const genPassword = require('./lib/PasswordHash').genPassword;
 const connection = require('../db/connection').connection;
 router.get('/register', (req, res, next) => {
-    res.sendFile(path.join(__dirname, '../../client/register.html'));
+    res.sendFile(path.join(__dirname, '../../views/register.html'));
 });
 
 router.post('/register', (req, res, next) => {

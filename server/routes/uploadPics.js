@@ -36,7 +36,7 @@ router.post('/upload', isAdmin , (req, res) => {
 });
 
 router.get('/upload', isAdmin , (req, res) => {
-    res.sendFile(path.join(__dirname, '../../client/upload.html'));
+    res.sendFile(path.join(__dirname, '../../views/upload.html'));
 });
 
 module.exports = router;

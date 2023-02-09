@@ -21,6 +21,7 @@ const displayPics = require('./routes/displayPics');
 app.use(express.json());
 express.urlencoded({ extended: true });
 
+app.use(express.static('public'));
 app.set('view engine', 'ejs');
 const options = {
   ttl: 1000 * 60 * 60 * 24,
@@ -47,7 +48,7 @@ app.use(
   })
 );
 
-app.use(express.static('Homepage'));
+
 
 
 
@@ -65,7 +66,7 @@ app.use('/', uploadRouter);
 app.use('/', displayPics);
 
 app.get('*', (req, res) => {
-  res.status(404).sendFile(path.join(__dirname, "../client/404.html"));
+  res.status(404).sendFile(path.join(__dirname, "../views/404.html"));
 });
 
 const port = 8080;

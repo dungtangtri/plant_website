@@ -22,6 +22,6 @@ router.get('/images/:id', (req, res) => {
     });
 });
 router.get('/images', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../client/displayPictures.html'));
+    res.sendFile(path.join(__dirname, '../../views/displayPictures.html'));
 })
 module.exports = router;
