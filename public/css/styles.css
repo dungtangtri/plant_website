@@ -233,6 +233,10 @@ the website, in dark theme
   cursor: pointer;
 }
 
+#login{
+  cursor: pointer;
+}
+
 @media screen and (max-width: 767px) {
   .nav__menu {
     position: fixed;
@@ -784,7 +788,6 @@ the website, in dark theme
   display: grid;
   place-items: center;
   cursor: pointer;
-
 }
 
 .new-search__icon {

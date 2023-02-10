@@ -161,6 +161,11 @@ form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const searchTerm = input.value;
     window.location.href = `/search?q=${searchTerm}`;
-
 });
 
+/*=============== LOGIN ===============*/
+const login = document.getElementById('login')
+
+login.addEventListener('click', () => {
+    window.location.href = `/login`;
+})
