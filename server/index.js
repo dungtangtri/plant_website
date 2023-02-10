@@ -7,6 +7,9 @@ const dotenv = require('dotenv').config();
 const passport = require('passport');
 const fileUpload = require('express-fileupload');
 const ejs = require('ejs');
+const csrf = require('lusca').csrf;
+const RateLimiter = require('express-rate-limit');
+
 
 const DBconfig = require('./db/connection').config;
 const plantsRouter = require('./routes/plants');
@@ -27,7 +30,11 @@ const options = {
   ttl: 1000 * 60 * 60 * 24,
   autoRemoveInterval: 1800, // check for expired sessions every 30 minutes
 };
-
+var RateLimit = require('express-rate-limit');
+var limiter = new RateLimit({
+  windowMs: 1*60*1000, // 1 minute
+  max: 5
+});
 app.use(
   session({
     store: new MSSQLStore(DBconfig, options),
@@ -38,7 +45,7 @@ app.use(
       maxAge: 1000 * 60 * 60 * 24, // 24 hours
     }
   }));
-  
+app.use(csrf());
 app.use(
   fileUpload({
     limits: {
@@ -48,7 +55,7 @@ app.use(
   })
 );
 
-
+app.use(limiter);
 
 
 
