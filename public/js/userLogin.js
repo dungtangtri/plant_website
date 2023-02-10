@@ -14,8 +14,10 @@ const form = document.querySelector('#login-form');
     })
       .then((response) => response.json())
       .then((data) => {
+        let errorMessage = document.querySelector('#error-message');
+        const successMessage = document.querySelector('#success-message');
         if (data.success) {
-          const successMessage = document.querySelector('#success-message');
+          errorMessage = '';
           successMessage.textContent = data.message;
           // Login successful, redirect to homepage
           setTimeout(() => {
@@ -24,7 +26,7 @@ const form = document.querySelector('#login-form');
 
         } else {
           // Login failed, display error message
-          const errorMessage = document.querySelector('#error-message');
+         
           errorMessage.textContent = data.message;
         }
       })

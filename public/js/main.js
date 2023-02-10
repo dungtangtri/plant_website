@@ -154,14 +154,13 @@ const toggleSearch = (search, button) => {
 
 toggleSearch('search-bar', 'search--button')
 
-const form = document.getElementById('new-search-bar');
-const input = document.getElementById('new-search-input');
+const form = document.getElementById('search-bar');
+const input = document.getElementById('search-input');
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const searchTerm = input.value;
-    input.value = '';
-    await fetch(`/search?q=${searchTerm}`).then(res => res.json());
-   
+    window.location.href = `/search?q=${searchTerm}`;
+
 });
 

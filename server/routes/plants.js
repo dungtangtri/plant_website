@@ -20,7 +20,7 @@ router.get('/search', async (req, res) => {
   const searchTerm = req.query.q;
   const searchResults = await searchPlants(searchTerm);
   if (searchResults == undefined) {
-    res.send("Không tồn tại kết quả tìm kiếm");
+    res.redirect('/');
   }
   else {
     try {
