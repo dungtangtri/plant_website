@@ -159,6 +159,10 @@ const input = document.getElementById('search-input');
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    if (input.value == "" || input.value == 0) {
+        alert("Please input a plant name");
+        return false;
+    }
     const searchTerm = input.value;
     window.location.href = `/search?q=${searchTerm}`;
 });
