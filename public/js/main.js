@@ -142,6 +142,7 @@ sr.reveal(`.about__data, .contact__form`, { origin: 'right' })
 sr.reveal(`.questions__group, .footer`, { interval: 100 })
 
 /*=============== SEARCH BAR ===============*/
+const input = document.getElementById('search-input');
 const toggleSearch = (search, button) => {
     const searchBar = document.getElementById(search),
         searchButton = document.getElementById(button)
@@ -149,18 +150,27 @@ const toggleSearch = (search, button) => {
     searchButton.addEventListener('click', () => {
         // Add show-search class, so that the search bar expands
         searchBar.classList.toggle('show-search')
+        input.focus() //focus on textbox
     })
 }
 
 toggleSearch('search-bar', 'search--button')
 
 const form = document.getElementById('search-bar');
-const input = document.getElementById('search-input');
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    if (input.value == "" || input.value == 0) {
+        alert("Please input a plant name");
+        return false;
+    }
     const searchTerm = input.value;
     window.location.href = `/search?q=${searchTerm}`;
-
 });
 
+/*=============== LOGIN ===============*/
+const login = document.getElementById('login')
+
+login.addEventListener('click', () => {
+    window.location.href = `/login`;
+})
