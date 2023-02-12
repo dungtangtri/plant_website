@@ -22,7 +22,7 @@
     <!-- HEADER -->
     <header class="header" id="header">
         <nav class="nav container">
-            <a href="index.html" class="nav__logo">
+            <a href="/" class="nav__logo">
                 <img src="img/leaf.png">Phu Tho Plant
             </a>
 
@@ -154,7 +154,14 @@
                                 <%= tree.tai_lieu_dan %>
                             </td>
                         </tr>
-
+                        <div id="image-container">
+                            <img id="image" src="">
+                        </div>
+                        <script>
+                            const image = document.getElementById('image');
+                            const id1 =  <%= tree.id %> ;
+                            image.src = `/images/${id1}`;
+                        </script>
                     </table>
                 </div>
             </div>

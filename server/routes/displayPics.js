@@ -3,6 +3,7 @@ const router = express.Router();
 const sql = require('mssql');
 const config = require('../db/connection').config;
 const path = require('path');
+const isAdmin = require('../')
 router.get('/images/:id', (req, res) => {
     const id = req.params.id;
     const connection = new sql.ConnectionPool(config, (err) => {

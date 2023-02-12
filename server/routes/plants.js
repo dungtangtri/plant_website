@@ -9,7 +9,7 @@ async function searchPlants(searchTerm) {
     await connection.connect();
     const result = await connection.request()
       .input('searchTerm', sql.NVarChar, searchTerm)
-      .query('SELECT * FROM plants WHERE FREETEXT(Name, @searchTerm)');
+      .query(`SELECT * FROM plants WHERE Name LIKE '${searchTerm}%'`);
     return result.recordset;
   } catch (err) {
     console.error(err);
@@ -21,10 +21,13 @@ router.get('/search', async (req, res) => {
   const searchResults = await searchPlants(searchTerm);
   if (searchResults == undefined) {
     res.redirect('/');
+  }else if(searchResults[0] == null){
+    res.send("No results were found!")
   }
   else {
     try {
       let tree = {
+        id: searchResults[0]['ID'],
         ten: searchResults[0]['Name'],
         dang_song: searchResults[0]['Dạng sống'],
         cong_dung: searchResults[0]['Công dụng'],
@@ -44,8 +47,10 @@ router.get('/search', async (req, res) => {
         tinh_trang_bao_ton: searchResults[0]['Tình trạng bảo tồn, kinh doanh'],
         tai_lieu_dan: searchResults[0]['Tài liệu dẫn'],
       };
+      
       res.render('search-result', { tree: tree });
       console.log(req.query);
+
     } catch (error) {
       console.log(error);
       res.send("Error, please try again!");
