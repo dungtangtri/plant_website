@@ -7,7 +7,6 @@ const dotenv = require('dotenv').config();
 const passport = require('passport');
 const fileUpload = require('express-fileupload');
 const ejs = require('ejs');
-const csrf = require('lusca').csrf;
 
 
 const DBconfig = require('./db/connection').config;
@@ -47,9 +46,9 @@ app.use(
     saveUninitialized: true,
     cookie: {
       maxAge: 1000 * 60 * 60 * 24, // 24 hours
+      secure: true,
     }
   }));
-app.use(csrf());
 app.use(
   fileUpload({
     limits: {
