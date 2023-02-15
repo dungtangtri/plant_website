@@ -48,6 +48,7 @@ app.use(
     saveUninitialized: true,
     cookie: {
       maxAge: 1000 * 60 * 60 * 24, // 24 hours
+      secure: true
     }
   }));
 app.use(csurf({  }));
