@@ -7,7 +7,7 @@ const dotenv = require('dotenv').config();
 const passport = require('passport');
 const fileUpload = require('express-fileupload');
 const ejs = require('ejs');
-const csrf = require('lusca').csrf;
+const csurf = require('csurf');
 
 
 const DBconfig = require('./db/connection').config;
@@ -18,6 +18,10 @@ const registerRouter = require('./routes/register');
 const logoutRouter = require('./routes/logout');
 const uploadRouter = require('./routes/uploadPics');
 const displayPics = require('./routes/displayPics');
+const options = {
+  ttl: 1000 * 60 * 60 * 24,
+  autoRemoveInterval: 1800, // check for expired sessions every 30 minutes
+};
 
 
 app.use(express.json());
@@ -25,15 +29,12 @@ express.urlencoded({ extended: true });
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
-const options = {
-  ttl: 1000 * 60 * 60 * 24,
-  autoRemoveInterval: 1800, // check for expired sessions every 30 minutes
-};
+
 
 
 var RateLimit = require('express-rate-limit');
 var limiter = RateLimit({
-  windowMs: 1*60*1000, // 1 minute
+  windowMs: 1 * 60 * 1000, // 1 minute
   max: 10,
   message: "Too many requests, please try again after 1 minute! "
 });
@@ -49,7 +50,12 @@ app.use(
       maxAge: 1000 * 60 * 60 * 24, // 24 hours
     }
   }));
-app.use(csrf());
+app.use(csurf({  }));
+app.use(function (req, res, next) {
+  res.locals.csrfToken = req.csrfToken();
+  next();
+})
+
 app.use(
   fileUpload({
     limits: {
@@ -58,7 +64,6 @@ app.use(
     abortOnLimit: true,
   })
 );
-
 
 
 

@@ -4,13 +4,14 @@ const form = document.querySelector('#login-form');
 
     const username = form.elements.username.value;
     const password = form.elements.password.value;
+    const csrf = form.elements._csrf.value
 
     fetch('/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ username, password,csrf }),
     })
       .then((response) => response.json())
       .then((data) => {
