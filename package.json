@@ -26,7 +26,6 @@
     "express-rate-limit": "^6.7.0",
     "express-session": "^1.17.3",
     "fs": "^0.0.1-security",
-    "lusca": "^1.7.0",
     "mssql": "^7.2.0",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
