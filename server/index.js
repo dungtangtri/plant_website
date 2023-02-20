@@ -29,6 +29,19 @@ const options = {
   autoRemoveInterval: 1800, // check for expired sessions every 30 minutes
 };
 
+app.use(
+  session({
+    store: new MSSQLStore(DBconfig, options),
+    secret: process.env.SESSION_KEY,
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 24, // 24 hours
+      secure : true,
+    }
+  }));
+
+
 
 var RateLimit = require('express-rate-limit');
 var limiter = RateLimit({
@@ -38,17 +51,7 @@ var limiter = RateLimit({
 });
 app.use(limiter);
 
-app.use(
-  session({
-    store: new MSSQLStore(DBconfig, options),
-    secret: process.env.SESSION_KEY,
-    resave: false,
-    saveUninitialized: true,
-    cookie: {
-      maxAge: 1000 * 60 * 60 * 24, // 24 hours
-      secure: true,
-    }
-  }));
+
 app.use(
   fileUpload({
     limits: {

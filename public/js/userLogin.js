@@ -15,9 +15,9 @@ const form = document.querySelector('#login-form');
       .then((response) => response.json())
       .then((data) => {
         let errorMessage = document.querySelector('#error-message');
-        const successMessage = document.querySelector('#success-message');
+        let successMessage = document.querySelector('#success-message');
         if (data.success) {
-          errorMessage = '';
+          errorMessage.textContent = ''; // clear error message
           successMessage.textContent = data.message;
           // Login successful, redirect to homepage
           setTimeout(() => {
@@ -25,8 +25,7 @@ const form = document.querySelector('#login-form');
           }, 3000);
 
         } else {
-          // Login failed, display error message
-         
+          successMessage.textContent = ''
           errorMessage.textContent = data.message;
         }
       })
