@@ -82,37 +82,25 @@
                     <p class="search-title">Result found!</p>
                     <div class="grid">
                         <div class="plant-card">
-                            <a data-fancybox href="https://groot-plant.works/images/50" class="anh"><img
-                                    src="https://groot-plant.works/images/50"></a>
-                            <div class="ten"><strong>Tên:</strong> Bàng</div>
-                            <div class="dang_song"><strong>Dạng Sống:</strong> MM</div>
-                            <div class="cong_dung"><strong>Công Dụng:</strong> G,T,C</div>
-                            <div class="sach_do"><strong>Sách Đỏ:</strong></div>
-                            <div class="ten_bo"><strong>Tên Bộ:</strong> Myrtales</div>
-                            <div class="ten_bo1"><strong>Tên Bộ 1:</strong> Bộ Sim</div>
-                            <div class="ten_ho"><strong>Tên Họ:</strong> Combretaceae</div>
-                            <div class="ten_ho1"><strong>Tên Họ 1:</strong> Họ bàng</div>
-                            <div class="ten_chi"><strong>Tên Chi:</strong> Terminalia</div>
-                            <div class="ten_chi1"><strong>Tên Chi 1:</strong> Chò</div>
-                            <div class="ten_loai"><strong>Tên Loài:</strong> Terminalia Catappa - L.</div>
-                            <div class="dong_danh"><strong>Đồng Danh:</strong></div>
-                            <div class="dac_diem_hinh_thai"><strong>Đặc điểm hình thái:</strong> Cây gỗ rụng lá, thân
-                                không thẳng, gốc có u bướu, cao 10-25 m, đường kính 35-70 cm; tán hình ô phân thành
-                                nhiều tầng, màu xanh thẫm điểm các lá già màu nâu đỏ. Lá đơn nguyên mọc cách, tập trung
-                                ở đấu cành, phiến lá hình trứng ngược, đầu tròn có một mũi ngắn. Gân bên 7-9 đôi nổi rõ
-                                ở mặt dưới, hơi có lông hung, cuống lá có lông. Cụm hoa hình bông mọc ở đầu cành hay
-                                nách lá, dài 10-15 cm mang nhiều hoa. Hoa nhỏ, tạp tính, thường mẫu 5, ít khi 4, màu
-                                trắng xanh. Hoa lưỡng tính ở gốc, hoa đực ở ngọn. Cánh đài hợp hình ống dài 1,5 mm, có 5
-                                răng ngắn. Không cánh tràng. Nhị đực 10, xếp 2 vòng, có đĩa làm thành một vòng. Hoa
-                                lưỡng tính có bầu hạ 1 ô và 2 noãn đảo. Quả hình bầu dục dẹt, nhẵn bóng, có gờ nhỏ rộng
-                                1-1,2 mm viền quanh, lúc non màu xanh lục nhạt, lúc chín màu vàng, vỏ quả nạt có xơ, vị
-                                ngọt.</div>
-                            <div class="phan_bo_dia_ly"><strong>Phân bố địa lý:</strong> Rộng rãi từ bắc vào nam Việt
-                                Nam; Còn có ở Đông dương, Trung quốc, Thái lan, Mianmar, Philippin, Malaisia, New
-                                Guinê,.. Tại Phú Thọ bàng phân bố ở rừng quốc gia Đền Hùng.</div>
-                            <div class="tinh_trang_bao_ton"><strong>Tình trạng bảo tồn, kinh doanh:</strong></div>
-                            <div class="dac_diem_sinh_hoc"><strong>Đặc điểm sinh học và sinh thái học:</strong></div>
-                            <div class="tai_lieu_dan"><strong>Tài liệu dẫn:</strong></div>
+                            <a data-fancybox href="https://groot-plant.works/images//<%= tree.id  %>" class="anh"><img
+                                    src=" https://groot-plant.works/images/<%= tree.id  %>"></a>
+                            <div class="ten"><strong>Tên:</strong> <%= tree.ten %></div>
+                            <div class="dang_song"><strong>Dạng Sống:</strong> <%= tree.dang_song %></div>
+                            <div class="cong_dung"><strong>Công Dụng:</strong> <%= tree.cong_dung %></div>
+                            <div class="sach_do"><strong>Sách Đỏ:</strong><%= tree.sach_do %></div>
+                            <div class="ten_bo"><strong>Tên Bộ:</strong> <%= tree.ten_bo %></div>
+                            <div class="ten_bo1"><strong>Tên Bộ 1:</strong> <%= tree.ten_bo1 %></div>
+                            <div class="ten_ho"><strong>Tên Họ:</strong> <%= tree.ten_ho %></div>
+                            <div class="ten_ho1"><strong>Tên Họ 1:</strong> <%= tree.ten_ho1 %></div>
+                            <div class="ten_chi"><strong>Tên Chi:</strong> <%= tree.ten_chi %></div>
+                            <div class="ten_chi1"><strong>Tên Chi 1:</strong> <%= tree.ten_chi1 %></div>
+                            <div class="ten_loai"><strong>Tên Loài:</strong> <%= tree.ten_loai %></div>
+                            <div class="dong_danh"><strong>Đồng Danh:</strong><%= tree.dong_danh %></div>
+                            <div class="dac_diem_hinh_thai"><strong>Đặc điểm hình thái:</strong> <%= tree.dac_diem_hinh_thai %></div>
+                            <div class="phan_bo_dia_ly"><strong>Phân bố địa lý:</strong> <%= tree.phan_bo_dia_ly %></div>
+                            <div class="tinh_trang_bao_ton"><strong>Tình trạng bảo tồn, kinh doanh:</strong><%= tree.tinh_trang_bao_ton %></div>
+                            <div class="dac_diem_sinh_hoc"><strong>Đặc điểm sinh học và sinh thái học:</strong><%= tree.dac_diem_sinh_hoc %></div>
+                            <div class="tai_lieu_dan"><strong>Tài liệu dẫn:</strong><%= tree.tai_lieu_dan %></div>
                         </div>
                     </div>
         </section>
