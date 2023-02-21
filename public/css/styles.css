@@ -306,7 +306,6 @@ the website, in dark theme
 /*=============== HOME ===============*/
 .home {
   padding: 3.5rem 0 2rem;
-
 }
 
 .home__container {
@@ -325,11 +324,6 @@ the website, in dark theme
   margin-bottom: var(--mb-1);
   text-align: center;
   color: gray;
-}
-
-.home__description {
-  margin-top: 0;
-  margin-bottom: var(--mb-2-5);
 }
 
 .home__search {
@@ -447,15 +441,6 @@ the website, in dark theme
   display: inline-flex;
   align-items: center;
   column-gap: .5rem;
-}
-
-.button--link {
-  color: var(--first-color);
-  font-weight: var(--font-medium);
-}
-
-.button--link:hover .button__icon {
-  transform: translateX(.25rem);
 }
 
 /*=============== QUESTIONS ===============*/
