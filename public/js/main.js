@@ -179,3 +179,18 @@ const login = document.getElementById('login')
 login.addEventListener('click', () => {
     window.location.href = `/login`;
 })
+
+//search result box appendChild add by number of search results return by server
+
+// const plantbox = document.getElementById("plant-grid")
+
+// var toAdd = document.createDocumentFragment();
+// for (var i = 1; i < 1; i++) {
+//     var newDiv = document.createElement('div');
+//     newDiv.id = 'pc' + i;
+//     newDiv.className = 'plant-card';
+//     toAdd.appendChild(newDiv);
+// }
+
+// plantbox.appendChild(toAdd);
+

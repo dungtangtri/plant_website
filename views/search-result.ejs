@@ -12,6 +12,10 @@
     <!-- REMIX ICONS -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
+    <!-- FANCYBOX -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" rel="stylesheet">
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
 
@@ -22,7 +26,7 @@
     <!-- HEADER -->
     <header class="header" id="header">
         <nav class="nav container">
-            <a href="/" class="nav__logo">
+            <a href="index.html" class="nav__logo">
                 <img src="img/leaf.png">Phu Tho Plant
             </a>
 
@@ -38,7 +42,7 @@
                         <a href="index.html#contact" class="nav__link">Contact us</a>
                     </li>
                     <li class="nav__item" id="login">
-                        <a href="/login" class="nav__link">Log in</a>
+                        <a class="nav__link">Log in</a>
                     </li>
 
                 </ul>
@@ -65,107 +69,52 @@
             <!-- HOME -->
             <div class="home__container container grid">
                 <div class="home__search">
-                    <form class="new-search" id="new-search-bar">
-                        <input id="new-search-input" type="search" placeholder="Type something..." name="q"
-                            class="new-search__input">
-
-                        <div class="new-search__button" id="new-search--button">
-                            <i class="ri-search-2-line new-search__icon"></i>
+                    <form class="search" id="search-bar">
+                        <input id="search-input" type="search" placeholder="Type something..." class="search__input">
+                        <div class="search__button" id="search--button">
+                            <i class="ri-search-2-line search__icon"></i>
+                            <i class="ri-close-line search__close"></i>
                         </div>
                     </form>
                 </div>
 
                 <div class="home__data">
-                    <h1 class="home__title">
-                    </h1>
-                    <table>
-                        <tr>
-                            <th>Tên</th>
-                            <th>Dạng Sống</th>
-                            <th>Công Dụng</th>
-                            <th>Sách Đỏ</th>
-                            <th>Tên Bộ</th>
-                            <th>Tên Bộ 1</th>
-                            <th>Tên Họ</th>
-                            <th>Tên Họ 1</th>
-                            <th>Tên Chi</th>
-                            <th>Tên Chi 1</th>
-                            <th>Tên Loài</th>
-                            <th>Đồng Danh</th>
-                            <th>Đặc điểm hình thái</th>
-                            <th>Đặc điểm sinh học và sinh thái học</th>
-                            <th>Phân bố địa lý</th>
-                            <th>Tình trạng bảo tồn, kinh doanh</th>
-                            <th>Tài liệu dẫn</th>
-
-                        </tr>
-                        <tr>
-                            <td>
-                                <%= tree.ten %>
-                            </td>
-                            <td>
-                                <%= tree.dang_song %>
-                            </td>
-                            <td>
-                                <%= tree.cong_dung %>
-                            </td>
-                            <td>
-                                <%= tree.sach_do %>
-                            </td>
-                            <td>
-                                <%= tree.ten_bo %>
-                            </td>
-                            <td>
-                                <%= tree.ten_bo1 %>
-                            </td>
-                            <td>
-                                <%= tree.ten_ho %>
-                            </td>
-                            <td>
-                                <%= tree.ten_ho1 %>
-                            </td>
-                            <td>
-                                <%= tree.ten_chi %>
-                            </td>
-                            <td>
-                                <%= tree.ten_chi1 %>
-                            </td>
-                            <td>
-                                <%= tree.ten_loai %>
-                            </td>
-                            <td>
-                                <%= tree.dong_danh %>
-                            </td>
-                            <td>
-                                <%= tree.dac_diem_hinh_thai %>
-                            </td>
-                            <td>
-                                <%= tree.dac_diem_sinh_hoc %>
-                            </td>
-                            <td>
-                                <%= tree.phan_bo_dia_ly %>
-                            </td>
-                            <td>
-                                <%= tree.gia_tri %>
-                            </td>
-                            <td>
-                                <%= tree.tinh_trang_bao_ton %>
-                            </td>
-                            <td>
-                                <%= tree.tai_lieu_dan %>
-                            </td>
-                        </tr>
-                        <div id="image-container">
-                            <img id="image" src="">
+                    <p class="search-title">Result found!</p>
+                    <div class="grid">
+                        <div class="plant-card">
+                            <a data-fancybox href="https://groot-plant.works/images/50" class="anh"><img
+                                    src="https://groot-plant.works/images/50"></a>
+                            <div class="ten"><strong>Tên:</strong> Bàng</div>
+                            <div class="dang_song"><strong>Dạng Sống:</strong> MM</div>
+                            <div class="cong_dung"><strong>Công Dụng:</strong> G,T,C</div>
+                            <div class="sach_do"><strong>Sách Đỏ:</strong></div>
+                            <div class="ten_bo"><strong>Tên Bộ:</strong> Myrtales</div>
+                            <div class="ten_bo1"><strong>Tên Bộ 1:</strong> Bộ Sim</div>
+                            <div class="ten_ho"><strong>Tên Họ:</strong> Combretaceae</div>
+                            <div class="ten_ho1"><strong>Tên Họ 1:</strong> Họ bàng</div>
+                            <div class="ten_chi"><strong>Tên Chi:</strong> Terminalia</div>
+                            <div class="ten_chi1"><strong>Tên Chi 1:</strong> Chò</div>
+                            <div class="ten_loai"><strong>Tên Loài:</strong> Terminalia Catappa - L.</div>
+                            <div class="dong_danh"><strong>Đồng Danh:</strong></div>
+                            <div class="dac_diem_hinh_thai"><strong>Đặc điểm hình thái:</strong> Cây gỗ rụng lá, thân
+                                không thẳng, gốc có u bướu, cao 10-25 m, đường kính 35-70 cm; tán hình ô phân thành
+                                nhiều tầng, màu xanh thẫm điểm các lá già màu nâu đỏ. Lá đơn nguyên mọc cách, tập trung
+                                ở đấu cành, phiến lá hình trứng ngược, đầu tròn có một mũi ngắn. Gân bên 7-9 đôi nổi rõ
+                                ở mặt dưới, hơi có lông hung, cuống lá có lông. Cụm hoa hình bông mọc ở đầu cành hay
+                                nách lá, dài 10-15 cm mang nhiều hoa. Hoa nhỏ, tạp tính, thường mẫu 5, ít khi 4, màu
+                                trắng xanh. Hoa lưỡng tính ở gốc, hoa đực ở ngọn. Cánh đài hợp hình ống dài 1,5 mm, có 5
+                                răng ngắn. Không cánh tràng. Nhị đực 10, xếp 2 vòng, có đĩa làm thành một vòng. Hoa
+                                lưỡng tính có bầu hạ 1 ô và 2 noãn đảo. Quả hình bầu dục dẹt, nhẵn bóng, có gờ nhỏ rộng
+                                1-1,2 mm viền quanh, lúc non màu xanh lục nhạt, lúc chín màu vàng, vỏ quả nạt có xơ, vị
+                                ngọt.</div>
+                            <div class="phan_bo_dia_ly"><strong>Phân bố địa lý:</strong> Rộng rãi từ bắc vào nam Việt
+                                Nam; Còn có ở Đông dương, Trung quốc, Thái lan, Mianmar, Philippin, Malaisia, New
+                                Guinê,.. Tại Phú Thọ bàng phân bố ở rừng quốc gia Đền Hùng.</div>
+                            <div class="tinh_trang_bao_ton"><strong>Tình trạng bảo tồn, kinh doanh:</strong></div>
+                            <div class="dac_diem_sinh_hoc"><strong>Đặc điểm sinh học và sinh thái học:</strong></div>
+                            <div class="tai_lieu_dan"><strong>Tài liệu dẫn:</strong></div>
                         </div>
-                        <script>
-                            const image = document.getElementById('image');
-                            const id1 =  <%= tree.id %> ;
-                            image.src = `/images/${id1}`;
-                        </script>
-                    </table>
-                </div>
-            </div>
+                    </div>
         </section>
 
     </main>
@@ -222,6 +171,14 @@
             </div>
         </div>
     </footer>
+
+    <!--=============== SCROLL UP ===============-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-fill scrollup__icon"></i>
+    </a>
+
+    <!--=============== SCROLL REVEAL ===============-->
+    <script src="js/scrollreveal.min.js"></script>
 
     <!--=============== MAIN JS ===============-->
     <script src="js/main.js"></script>
