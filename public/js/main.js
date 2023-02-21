@@ -136,7 +136,7 @@ const sr = ScrollReveal({
 
 sr.reveal(`.home__data`)
 sr.reveal(`.home__img`, { delay: 500 })
-sr.reveal(`.home__social`, { delay: 600 })
+sr.reveal(`.home__search`, { delay: 600 })
 sr.reveal(`.about__img, .contact__box`, { origin: 'left' })
 sr.reveal(`.about__data, .contact__form`, { origin: 'right' })
 sr.reveal(`.questions__group, .footer`, { interval: 100 })
@@ -160,8 +160,13 @@ const form = document.getElementById('search-bar');
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    if (input.value == "" || input.value == 0) {
+    if (input.value == 0) {
         alert("Please input a plant name");
+        return false;
+    }
+
+    if (input.value.length == 1) {
+        alert("Please input at least 2 characters");
         return false;
     }
     const searchTerm = input.value;
@@ -174,3 +179,18 @@ const login = document.getElementById('login')
 login.addEventListener('click', () => {
     window.location.href = `/login`;
 })
+
+//search result box appendChild add by number of search results return by server
+
+// const plantbox = document.getElementById("plant-grid")
+
+// var toAdd = document.createDocumentFragment();
+// for (var i = 1; i < 1; i++) {
+//     var newDiv = document.createElement('div');
+//     newDiv.id = 'pc' + i;
+//     newDiv.className = 'plant-card';
+//     toAdd.appendChild(newDiv);
+// }
+
+// plantbox.appendChild(toAdd);
+
