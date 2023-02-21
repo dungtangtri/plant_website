@@ -9,7 +9,7 @@ async function searchPlants(searchTerm) {
     await connection.connect();
     const result = await connection.request()
       .input('searchTerm', sql.NVarChar, searchTerm)
-      .query(`SELECT * FROM plants WHERE Name LIKE '${searchTerm}%'`);
+      .query(`SELECT * FROM plants WHERE CONTAINS (Name, @searchTerm)`);
     return result.recordset;
   } catch (err) {
     console.error(err);
