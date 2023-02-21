@@ -22,13 +22,10 @@ const displayPics = require('./routes/displayPics');
 app.use(express.json());
 express.urlencoded({ extended: true });
 
-app.use(express.static('public'));
-app.set('view engine', 'ejs');
 const options = {
   ttl: 1000 * 60 * 60 * 24,
   autoRemoveInterval: 1800, // check for expired sessions every 30 minutes
 };
-
 app.use(
   session({
     store: new MSSQLStore(DBconfig, options),
@@ -37,15 +34,21 @@ app.use(
     saveUninitialized: true,
     cookie: {
       maxAge: 1000 * 60 * 60 * 24, // 24 hours
-      secure : true,
+
     }
   }));
+require('./routes/lib/passport.js');
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(express.static('public'));
+app.set('view engine', 'ejs');
 
 
 
 var RateLimit = require('express-rate-limit');
 var limiter = RateLimit({
-  windowMs: 1*60*1000, // 1 minute
+  windowMs: 1 * 60 * 1000, // 1 minute
   max: 10,
   message: "Too many requests, please try again after 1 minute! "
 });
@@ -60,14 +63,6 @@ app.use(
     abortOnLimit: true,
   })
 );
-
-
-
-
-
-require('./routes/lib/passport.js');
-app.use(passport.initialize());
-app.use(passport.session());
 
 
 app.use('/', plantsRouter);
