@@ -306,7 +306,6 @@ the website, in dark theme
 /*=============== HOME ===============*/
 .home {
   padding: 3.5rem 0 2rem;
-
 }
 
 .home__container {
@@ -325,11 +324,6 @@ the website, in dark theme
   margin-bottom: var(--mb-1);
   text-align: center;
   color: gray;
-}
-
-.home__description {
-  margin-top: 0;
-  margin-bottom: var(--mb-2-5);
 }
 
 .home__search {
@@ -447,15 +441,6 @@ the website, in dark theme
   display: inline-flex;
   align-items: center;
   column-gap: .5rem;
-}
-
-.button--link {
-  color: var(--first-color);
-  font-weight: var(--font-medium);
-}
-
-.button--link:hover .button__icon {
-  transform: translateX(.25rem);
 }
 
 /*=============== QUESTIONS ===============*/
@@ -904,19 +889,19 @@ the website, in dark theme
   display: grid;
   gap: .25rem .5rem;
   grid-template-areas:
-    'anh anh ten ten'
-    'anh anh dang_song dang_song'
-    'anh anh cong_dung cong_dung'
-    'anh anh sach_do sach_do'
+    'anh anh ten .'
+    'anh anh dang_song .'
+    'anh anh cong_dung .'
+    'anh anh sach_do .'
     'anh anh ten_bo ten_bo1'
     'anh anh ten_ho ten_ho1'
     'anh anh ten_chi ten_chi1'
     'anh anh ten_loai dong_danh'
-    'anh anh dac_diem_hinh_thai dac_diem_hinh_thai'
-    'anh anh dac_diem_sinh_hoc dac_diem_sinh_hoc'
-    'anh anh phan_bo_dia_ly phan_bo_dia_ly'
-    'anh anh tinh_trang_bao_ton tinh_trang_bao_ton'
-    'anh anh tai_lieu_dan tai_lieu_dan';
+    '. . dac_diem_hinh_thai dac_diem_hinh_thai'
+    '. . dac_diem_sinh_hoc dac_diem_sinh_hoc'
+    '. . phan_bo_dia_ly phan_bo_dia_ly'
+    '. . tinh_trang_bao_ton tinh_trang_bao_ton'
+    '. . tai_lieu_dan tai_lieu_dan';
   grid-template-columns: auto auto auto auto;
   grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto;
   padding: .5rem;
@@ -924,77 +909,93 @@ the website, in dark theme
   width: 100%;
   margin: .5rem;
   border-radius: 1rem;
-  box-shadow:inset;
+  box-shadow: 0 0 20px 0 #3B7E20CC;
 }
 
 .anh {
-  grid-area:anh;
+  grid-area: anh;
   grid-row: 1 / span 13;
   width: 100%
 }
 
 .ten {
   grid-area: ten;
+  border-bottom: .5px solid white;
 }
 
 .dang_song {
   grid-area: dang_song;
+  border-bottom: .5px solid white;
 }
 
 .cong_dung {
   grid-area: cong_dung;
+  border-bottom: .5px solid white;
 }
 
 .sach_do {
   grid-area: sach_do;
+  border-bottom: .5px solid white;
 }
 
 .ten_bo {
   grid-area: ten_bo;
+  border-bottom: .5px solid white;
 }
 
 .ten_bo1 {
   grid-area: ten_bo1;
+  border-bottom: .5px solid white;
 }
 
 .ten_ho {
   grid-area: ten_ho;
+  border-bottom: .5px solid white;
 }
 
 .ten_ho1 {
   grid-area: ten_ho1;
+  border-bottom: .5px solid white;
 }
 
 .ten_chi {
   grid-area: ten_chi;
+  border-bottom: .5px solid white;
 }
 
 .ten_chi1 {
   grid-area: ten_chi1;
+  border-bottom: .5px solid white;
 }
 
 .ten_loai {
   grid-area: ten_loai;
+  border-bottom: .5px solid white;
 }
 
 .dong_danh {
   grid-area: dong_danh;
+  border-bottom: .5px solid white;
 }
 
 .dac_diem_hinh_thai {
   grid-area: dac_diem_hinh_thai;
+  border-bottom: .5px solid white;
 }
 
 .dac_diem_sinh_hoc {
   grid-area: dac_diem_sinh_hoc;
+  border-bottom: .5px solid white;
 }
 
 .phan_bo_dia_ly {
   grid-area: phan_bo_dia_ly;
+  border-bottom: .5px solid white;
 }
 
 .tinh_trang_bao_ton {
   grid-area: tinh_trang_bao_ton;
+  border-bottom: .5px solid white;
 }
 
 .tai_lieu_dan {
