@@ -237,6 +237,49 @@ the website, in dark theme
   cursor: pointer;
 }
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+#logout {
+  cursor: pointer;
+}
+
+.dropdown__content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown__content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown__content a:hover {
+  background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown__content {
+  display: block;
+}
+
+/*=============== DARK THEME LOGOUT ===============*/
+.dark-theme .dropdown__content a {
+  background-color: var(--container-color);
+  color: var(--text-color);
+}
+
+.dark-theme .dropdown__content a:hover {
+  background-color: var(--first-color-dark)
+}
+
 @media screen and (max-width: 767px) {
   .nav__menu {
     position: fixed;
@@ -897,11 +940,11 @@ the website, in dark theme
     'anh anh ten_ho ten_ho1'
     'anh anh ten_chi ten_chi1'
     'anh anh ten_loai dong_danh'
-    '. . dac_diem_hinh_thai dac_diem_hinh_thai'
-    '. . dac_diem_sinh_hoc dac_diem_sinh_hoc'
-    '. . phan_bo_dia_ly phan_bo_dia_ly'
-    '. . tinh_trang_bao_ton tinh_trang_bao_ton'
-    '. . tai_lieu_dan tai_lieu_dan';
+    'anh anh dac_diem_hinh_thai dac_diem_hinh_thai'
+    'anh anh dac_diem_sinh_hoc dac_diem_sinh_hoc'
+    'anh anh phan_bo_dia_ly phan_bo_dia_ly'
+    'anh anh tinh_trang_bao_ton tinh_trang_bao_ton'
+    'anh anh tai_lieu_dan tai_lieu_dan';
   grid-template-columns: auto auto auto auto;
   grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto;
   padding: .5rem;

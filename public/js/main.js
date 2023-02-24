@@ -186,10 +186,10 @@ login.addEventListener('click', () => {
 // const plantbox = document.getElementById("plant-grid")
 
 // var toAdd = document.createDocumentFragment();
-// for (var i = 1; i < 1; i++) {
+// for (var i = 1; i < 4; i++) {
 //     var newDiv = document.createElement('div');
 //     newDiv.id = 'pc' + i;
-//     newDiv.className = 'plant-card';
+//     newDiv.className = 'plant-card' + i;
 //     toAdd.appendChild(newDiv);
 // }
 
