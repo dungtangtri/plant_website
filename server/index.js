@@ -8,7 +8,7 @@ const passport = require('passport');
 const fileUpload = require('express-fileupload');
 const ejs = require('ejs');
 
-
+const homepageRouter = require('./routes/homepage');
 const DBconfig = require('./db/connection').config;
 const plantsRouter = require('./routes/plants');
 const loginRouter = require('./routes/login');
@@ -41,7 +41,7 @@ require('./routes/lib/passport.js');
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(express.static('public'));
+app.use(express.static('views'));
 app.set('view engine', 'ejs');
 
 
@@ -64,7 +64,7 @@ app.use(
   })
 );
 
-
+app.use('/', homepageRouter);
 app.use('/', plantsRouter);
 app.use('/', loginRouter);
 app.use('/', adminRouter);

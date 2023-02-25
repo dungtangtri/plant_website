@@ -39,11 +39,18 @@
                     </li>
                     <li class="nav__item" id="status-change">
                         <a class="nav__link" id="login">Log in</a>
-                        <div class="nav__link dropdown" id="logout"><u>Welcome, user!</u>
-                            <div class="dropdown__content">
+                        <div class="nav__link dropdown" id="logout"><u>Welcome, <%= user.name  %></u>
+                            <div class="dropdown__content" id = "dropdown_menu">
                                 <a>User Info</a>
                                 <a href="/logout">Log out</a>
                             </div>
+                            <script> 
+                            let status1 = <%= user.status %>;
+                                if(status1 == false){
+                                    const dropdown = document.getElementById("dropdown_menu");
+                                    dropdown.remove();               
+                                }
+                            </script>
                         </div>
                     </li>
                 </ul>
