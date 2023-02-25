@@ -47,8 +47,12 @@
                             <script> 
                             let status1 = <%= user.status %>;
                                 if(status1 == false){
-                                    const dropdown = document.getElementById("dropdown_menu");
+                                    const dropdown = document.getElementById("logout");
                                     dropdown.remove();               
+                                }
+                                else{
+                                    const login = document.getElementById("login");
+                                    login.remove();
                                 }
                             </script>
                         </div>
