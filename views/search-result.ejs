@@ -43,11 +43,22 @@
                     </li>
                     <li class="nav__item">
                         <a class="nav__link" id="login">Log in</a>
-                        <div class="nav__link dropdown" id="logout"><u>Welcome, user!</u>
-                            <div class="dropdown__content">
+                        <div class="nav__link dropdown" id="logout"><u>Welcome, <%= tree.name %></u>
+                            <div class="dropdown__content" id="dropdown_menu">
                                 <a>User Info</a>
                                 <a href="/logout">Log out</a>
                             </div>
+                            <script>
+                                let status2 = <%= tree.status %>;
+                                if (status2 == false) {
+                                    const dropdown = document.getElementById("logout");
+                                    dropdown.remove();
+                                }
+                                else {
+                                    const login = document.getElementById("login");
+                                    login.remove();
+                                }
+                            </script>
                         </div>
                     </li>
 
@@ -213,12 +224,7 @@
     <!--=============== MAIN JS ===============-->
     <script src="js/main.js"></script>
 
-    <script>
-        // clone div
-        for (var i = 1; i < 4; i++) {
-            $('.plant-card:first').clone().attr('id', 'pc' + i).appendTo('.plant-grid');
-        }
-    </script>
+
 </body>
 
 </html>
