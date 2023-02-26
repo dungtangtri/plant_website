@@ -49,8 +49,29 @@ router.get('/search', async (req, res) => {
         name: req.user.username,
         status: true
       };
-
+      for(let i = 1; i < searchResults.length; i++ ){
+        tree[`id${i}`] = searchResults[i]['ID'];
+        tree[`ten${i}`]= searchResults[i]['Name'];
+        tree[`dang_song${i}`]= searchResults[i]['Dạng sống'];
+        tree[`cong_dung${i}`]= searchResults[i]['Công dụng'];
+        tree[`sach_do${i}`]=  searchResults[i]['Sách đỏ'];
+        tree[`ten_bo${i}`]= searchResults[i]['TÊN BỘ'];
+        tree[`ten_bo1${i}`]= searchResults[i]['TÊN BỘ1'];
+        tree[`ten_ho${i}`]= searchResults[i]['TÊN HỌ'];
+        tree[`ten_chi${i}`] =searchResults[i]['TÊN CHI'];
+        tree[`ten_chi1${i}`] =searchResults[i]['TÊN CHI1'];
+        tree[`ten_loai${i}`] =searchResults[i]['TÊN LOÀI'];
+        tree[`dong_danh${i}`]=searchResults[i]['Đồng danh'];
+        tree[`dac_diem_hinh_thai${i}`]= searchResults[i]['Đặc điểm hình thái'];
+        tree[`dac_diem_sinh_hoc${i}`] =searchResults[i]['Đặc điểm sinh học và hình thái học'];
+        tree[`phan_bo_dia_ly${i}`] =searchResults[i]['Phân bố địa lý'];
+        tree[`gia_tri${i}`] =searchResults[i]['Giá trị'];
+        tree[`tinh_trang_bao_ton${i}`] =searchResults[i]['Tình trạng bảo tồn, kinh doanh'];
+        tree[`tai_lieu_dan${i}`]= searchResults[i]['Tài liệu dẫn'];
+        tree.i = i;
+      }
       res.render('search-result', { tree: tree });
+      
       console.log(req.query);
 
     } catch (error) {
@@ -78,7 +99,28 @@ router.get('/search', async (req, res) => {
         name: "user",
         status: false
       };
-      res.render('search-result', { tree: tree});
+      for(let i = 1; i < searchResults.length; i++ ){
+        tree[`id${i}`] = searchResults[i]['ID'];
+        tree[`ten${i}`]= searchResults[i]['Name'];
+        tree[`dang_song${i}`]= searchResults[i]['Dạng sống'];
+        tree[`cong_dung${i}`]= searchResults[i]['Công dụng'];
+        tree[`sach_do${i}`]=  searchResults[i]['Sách đỏ'];
+        tree[`ten_bo${i}`]= searchResults[i]['TÊN BỘ'];
+        tree[`ten_bo1${i}`]= searchResults[i]['TÊN BỘ1'];
+        tree[`ten_ho${i}`]= searchResults[i]['TÊN HỌ'];
+        tree[`ten_chi${i}`] =searchResults[i]['TÊN CHI'];
+        tree[`ten_chi1${i}`] =searchResults[i]['TÊN CHI1'];
+        tree[`ten_loai${i}`] =searchResults[i]['TÊN LOÀI'];
+        tree[`dong_danh${i}`]=searchResults[i]['Đồng danh'];
+        tree[`dac_diem_hinh_thai${i}`]= searchResults[i]['Đặc điểm hình thái'];
+        tree[`dac_diem_sinh_hoc${i}`] =searchResults[i]['Đặc điểm sinh học và hình thái học'];
+        tree[`phan_bo_dia_ly${i}`] =searchResults[i]['Phân bố địa lý'];
+        tree[`gia_tri${i}`] =searchResults[i]['Giá trị'];
+        tree[`tinh_trang_bao_ton${i}`] =searchResults[i]['Tình trạng bảo tồn, kinh doanh'];
+        tree[`tai_lieu_dan${i}`]= searchResults[i]['Tài liệu dẫn'];
+        tree.i = i;
+      }
+      res.render('search-result', { tree: tree });
     }
   }
 });
