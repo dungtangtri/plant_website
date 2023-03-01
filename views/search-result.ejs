@@ -272,138 +272,144 @@
         }
 
         // return number of box based on number of search results by server
-        const num = 1;
-        for (var i = 0; i < num; i++) {
+        const num = 0;
+        if (num == 0){
+            const searchtitle = document.querySelector(".search-title");
+            searchtitle.innerText="No result found!";
+        }
+        else {
+            for (var i = 0; i < num; i++) {
 
-            // ADD BOX
-            addBox();
+                // ADD BOX
+                addBox();
 
-            // ADD IMAGE
-            const imgdb = document.querySelectorAll(".anh");
-            imgdb[i].href = "https://groot-plant.works/images/50";
-            const imgcover = document.createElement("img");
-            imgdb[i].appendChild(imgcover);
-            imgcover.src = "https://groot-plant.works/images/50";
+                // ADD IMAGE
+                const imgdb = document.querySelectorAll(".anh");
+                imgdb[i].href = "https://groot-plant.works/images/50";
+                const imgcover = document.createElement("img");
+                imgdb[i].appendChild(imgcover);
+                imgcover.src = "https://groot-plant.works/images/50";
 
-            // ADD NAME
-            const ten = document.querySelectorAll(".ten");
-            const tendb = document.createElement("div");
-            ten[i].appendChild(tendb);
-            tendb.classList.add("tendb");
-            tendb.innerText = "Bàng";
+                // ADD NAME
+                const ten = document.querySelectorAll(".ten");
+                const tendb = document.createElement("div");
+                ten[i].appendChild(tendb);
+                tendb.classList.add("tendb");
+                tendb.innerText = "Bàng";
 
-            // ADD DANG SONG
-            const dangsong = document.querySelectorAll(".dang_song");
-            const dangsongdb = document.createElement("div");
-            dangsong[i].appendChild(dangsongdb);
-            dangsongdb.classList.add("dang_songdb");
-            dangsongdb.innerText = "MM";
+                // ADD DANG SONG
+                const dangsong = document.querySelectorAll(".dang_song");
+                const dangsongdb = document.createElement("div");
+                dangsong[i].appendChild(dangsongdb);
+                dangsongdb.classList.add("dang_songdb");
+                dangsongdb.innerText = "MM";
 
-            // ADD CONG DUNG
-            const congdung = document.querySelectorAll(".cong_dung");
-            const congdungdb = document.createElement("div");
-            congdung[i].appendChild(congdungdb);
-            congdungdb.classList.add("cong_dungdb");
-            congdungdb.innerText = "G,T,C";
+                // ADD CONG DUNG
+                const congdung = document.querySelectorAll(".cong_dung");
+                const congdungdb = document.createElement("div");
+                congdung[i].appendChild(congdungdb);
+                congdungdb.classList.add("cong_dungdb");
+                congdungdb.innerText = "G,T,C";
 
-            // ADD SACH DO
-            const sachdo = document.querySelectorAll(".sach_do");
-            const sachdodb = document.createElement("div");
-            sachdo[i].appendChild(sachdodb);
-            sachdodb.classList.add("sach_dodb");
-            sachdodb.innerText = "none";
+                // ADD SACH DO
+                const sachdo = document.querySelectorAll(".sach_do");
+                const sachdodb = document.createElement("div");
+                sachdo[i].appendChild(sachdodb);
+                sachdodb.classList.add("sach_dodb");
+                sachdodb.innerText = "none";
 
-            // ADD TEN BO
-            const tenbo = document.querySelectorAll(".ten_bo");
-            const tenbodb = document.createElement("div");
-            tenbo[i].appendChild(tenbodb);
-            tenbodb.classList.add("ten_bodb");
-            tenbodb.innerText = "Myrtales";
+                // ADD TEN BO
+                const tenbo = document.querySelectorAll(".ten_bo");
+                const tenbodb = document.createElement("div");
+                tenbo[i].appendChild(tenbodb);
+                tenbodb.classList.add("ten_bodb");
+                tenbodb.innerText = "Myrtales";
 
-            // ADD TEN BO 1
-            const tenbo1 = document.querySelectorAll(".ten_bo1");
-            const tenbo1db = document.createElement("div");
-            tenbo1[i].appendChild(tenbo1db);
-            tenbo1db.classList.add("ten_bo1db");
-            tenbo1db.innerText = "Bộ Sim";
+                // ADD TEN BO 1
+                const tenbo1 = document.querySelectorAll(".ten_bo1");
+                const tenbo1db = document.createElement("div");
+                tenbo1[i].appendChild(tenbo1db);
+                tenbo1db.classList.add("ten_bo1db");
+                tenbo1db.innerText = "Bộ Sim";
 
-            // ADD TEN HO
-            const tenho = document.querySelectorAll(".ten_ho");
-            const tenhodb = document.createElement("div");
-            tenho[i].appendChild(tenhodb);
-            tenhodb.classList.add("ten_hodb");
-            tenhodb.innerText = "Combretaceae";
+                // ADD TEN HO
+                const tenho = document.querySelectorAll(".ten_ho");
+                const tenhodb = document.createElement("div");
+                tenho[i].appendChild(tenhodb);
+                tenhodb.classList.add("ten_hodb");
+                tenhodb.innerText = "Combretaceae";
 
-            // ADD TEN HO 1
-            const tenho1 = document.querySelectorAll(".ten_ho1");
-            const tenho1db = document.createElement("div");
-            tenho1[i].appendChild(tenho1db);
-            tenho1db.classList.add("ten_ho1db");
-            tenho1db.innerText = "Họ bàng";
+                // ADD TEN HO 1
+                const tenho1 = document.querySelectorAll(".ten_ho1");
+                const tenho1db = document.createElement("div");
+                tenho1[i].appendChild(tenho1db);
+                tenho1db.classList.add("ten_ho1db");
+                tenho1db.innerText = "Họ bàng";
 
-            // ADD TEN CHI
-            const tenchi = document.querySelectorAll(".ten_chi");
-            const tenchidb = document.createElement("div");
-            tenchi[i].appendChild(tenchidb);
-            tenchidb.classList.add("ten_chidb");
-            tenchidb.innerText = "Terminalia";
+                // ADD TEN CHI
+                const tenchi = document.querySelectorAll(".ten_chi");
+                const tenchidb = document.createElement("div");
+                tenchi[i].appendChild(tenchidb);
+                tenchidb.classList.add("ten_chidb");
+                tenchidb.innerText = "Terminalia";
 
-            // ADD TEN CHI 1
-            const tenchi1 = document.querySelectorAll(".ten_chi1");
-            const tenchi1db = document.createElement("div");
-            tenchi1[i].appendChild(tenchi1db);
-            tenchi1db.classList.add("ten_chi1db");
-            tenchi1db.innerText = "Chò";
+                // ADD TEN CHI 1
+                const tenchi1 = document.querySelectorAll(".ten_chi1");
+                const tenchi1db = document.createElement("div");
+                tenchi1[i].appendChild(tenchi1db);
+                tenchi1db.classList.add("ten_chi1db");
+                tenchi1db.innerText = "Chò";
 
-            // ADD TEN LOAI
-            const tenloai = document.querySelectorAll(".ten_loai");
-            const tenloaidb = document.createElement("div");
-            tenloai[i].appendChild(tenloaidb);
-            tenloaidb.classList.add("ten_loaidb");
-            tenloaidb.innerText = "Terminalia Catappa - L.";
+                // ADD TEN LOAI
+                const tenloai = document.querySelectorAll(".ten_loai");
+                const tenloaidb = document.createElement("div");
+                tenloai[i].appendChild(tenloaidb);
+                tenloaidb.classList.add("ten_loaidb");
+                tenloaidb.innerText = "Terminalia Catappa - L.";
 
-            // ADD DONG DANH
-            const dongdanh = document.querySelectorAll(".dong_danh");
-            const dongdanhdb = document.createElement("div");
-            dongdanh[i].appendChild(dongdanhdb);
-            dongdanhdb.classList.add("dong_danhdb");
-            dongdanhdb.innerText = "none";
+                // ADD DONG DANH
+                const dongdanh = document.querySelectorAll(".dong_danh");
+                const dongdanhdb = document.createElement("div");
+                dongdanh[i].appendChild(dongdanhdb);
+                dongdanhdb.classList.add("dong_danhdb");
+                dongdanhdb.innerText = "none";
 
-            // ADD DAC DIEM HINH THAI
-            const dacdiemhinhthai = document.querySelectorAll(".dac_diem_hinh_thai");
-            const dacdiemhinhthaidb = document.createElement("div");
-            dacdiemhinhthai[i].appendChild(dacdiemhinhthaidb);
-            dacdiemhinhthaidb.classList.add("dac_diem_hinh_thaidb");
-            dacdiemhinhthaidb.innerText = "Cây gỗ rụng lá, thân không thẳng, gốc có u bướu, cao 10-25 m, đường kính 35-70 cm; tán hình ô phân thành nhiều tầng, màu xanh thẫm điểm các lá già màu nâu đỏ. Lá đơn nguyên mọc cách, tập trung ở đấu cành, phiến lá hình trứng ngược, đầu tròn có một mũi ngắn. Gân bên 7-9 đôi nổi rõ ở mặt dưới, hơi có lông hung, cuống lá có lông. Cụm hoa hình bông mọc ở đầu cành hay nách lá, dài 10-15 cm mang nhiều hoa. Hoa nhỏ, tạp tính, thường mẫu 5, ít khi 4, màu trắng xanh. Hoa lưỡng tính ở gốc, hoa đực ở ngọn. Cánh đài hợp hình ống dài 1,5 mm, có 5 răng ngắn. Không cánh tràng. Nhị đực 10, xếp 2 vòng, có đĩa làm thành một vòng. Hoa lưỡng tính có bầu hạ 1 ô và 2 noãn đảo. Quả hình bầu dục dẹt, nhẵn bóng, có gờ nhỏ rộng 1-1,2 mm viền quanh, lúc non màu xanh lục nhạt, lúc chín màu vàng, vỏ quả nạt có xơ, vị ngọt.";
+                // ADD DAC DIEM HINH THAI
+                const dacdiemhinhthai = document.querySelectorAll(".dac_diem_hinh_thai");
+                const dacdiemhinhthaidb = document.createElement("div");
+                dacdiemhinhthai[i].appendChild(dacdiemhinhthaidb);
+                dacdiemhinhthaidb.classList.add("dac_diem_hinh_thaidb");
+                dacdiemhinhthaidb.innerText = "Cây gỗ rụng lá, thân không thẳng, gốc có u bướu, cao 10-25 m, đường kính 35-70 cm; tán hình ô phân thành nhiều tầng, màu xanh thẫm điểm các lá già màu nâu đỏ. Lá đơn nguyên mọc cách, tập trung ở đấu cành, phiến lá hình trứng ngược, đầu tròn có một mũi ngắn. Gân bên 7-9 đôi nổi rõ ở mặt dưới, hơi có lông hung, cuống lá có lông. Cụm hoa hình bông mọc ở đầu cành hay nách lá, dài 10-15 cm mang nhiều hoa. Hoa nhỏ, tạp tính, thường mẫu 5, ít khi 4, màu trắng xanh. Hoa lưỡng tính ở gốc, hoa đực ở ngọn. Cánh đài hợp hình ống dài 1,5 mm, có 5 răng ngắn. Không cánh tràng. Nhị đực 10, xếp 2 vòng, có đĩa làm thành một vòng. Hoa lưỡng tính có bầu hạ 1 ô và 2 noãn đảo. Quả hình bầu dục dẹt, nhẵn bóng, có gờ nhỏ rộng 1-1,2 mm viền quanh, lúc non màu xanh lục nhạt, lúc chín màu vàng, vỏ quả nạt có xơ, vị ngọt.";
 
-            // ADD DAC DIEM SINH HOC
-            const dacdiemsinhhoc = document.querySelectorAll(".dac_diem_sinh_hoc");
-            const dacdiemsinhhocdb = document.createElement("div");
-            dacdiemsinhhoc[i].appendChild(dacdiemsinhhocdb);
-            dacdiemsinhhocdb.classList.add("dac_diem_sinh_hocdb");
-            dacdiemsinhhocdb.innerText = "none";
+                // ADD DAC DIEM SINH HOC
+                const dacdiemsinhhoc = document.querySelectorAll(".dac_diem_sinh_hoc");
+                const dacdiemsinhhocdb = document.createElement("div");
+                dacdiemsinhhoc[i].appendChild(dacdiemsinhhocdb);
+                dacdiemsinhhocdb.classList.add("dac_diem_sinh_hocdb");
+                dacdiemsinhhocdb.innerText = "none";
 
-            // ADD PHAN BO DIA LY
-            const phanbodialy = document.querySelectorAll(".phan_bo_dia_ly");
-            const phanbodialydb = document.createElement("div");
-            phanbodialy[i].appendChild(phanbodialydb);
-            phanbodialydb.classList.add("phan_bo_dia_lydb");
-            phanbodialydb.innerText = "Rộng rãi từ bắc vào nam Việt Nam; Còn có ở Đông dương, Trung quốc, Thái lan, Mianmar, Philippin, Malaisia, New Guinê,.. Tại Phú Thọ bàng phân bố ở rừng quốc gia Đền Hùng.";
+                // ADD PHAN BO DIA LY
+                const phanbodialy = document.querySelectorAll(".phan_bo_dia_ly");
+                const phanbodialydb = document.createElement("div");
+                phanbodialy[i].appendChild(phanbodialydb);
+                phanbodialydb.classList.add("phan_bo_dia_lydb");
+                phanbodialydb.innerText = "Rộng rãi từ bắc vào nam Việt Nam; Còn có ở Đông dương, Trung quốc, Thái lan, Mianmar, Philippin, Malaisia, New Guinê,.. Tại Phú Thọ bàng phân bố ở rừng quốc gia Đền Hùng.";
 
-            // ADD TINH TRANG BAO TON
-            const tinhtrangbaoton = document.querySelectorAll(".tinh_trang_bao_ton");
-            const tinhtrangbaotondb = document.createElement("div");
-            tinhtrangbaoton[i].appendChild(tinhtrangbaotondb);
-            tinhtrangbaotondb.classList.add("tinh_trang_bao_tondb");
-            tinhtrangbaotondb.innerText = "none";
+                // ADD TINH TRANG BAO TON
+                const tinhtrangbaoton = document.querySelectorAll(".tinh_trang_bao_ton");
+                const tinhtrangbaotondb = document.createElement("div");
+                tinhtrangbaoton[i].appendChild(tinhtrangbaotondb);
+                tinhtrangbaotondb.classList.add("tinh_trang_bao_tondb");
+                tinhtrangbaotondb.innerText = "none";
 
-            // ADD TAI LIEU DAN
-            const tailieudan = document.querySelectorAll(".tai_lieu_dan");
-            const tailieudandb = document.createElement("div");
-            tailieudan[i].appendChild(tailieudandb);
-            tailieudandb.classList.add("tai_lieu_dandb");
-            tailieudandb.innerText = "none";
+                // ADD TAI LIEU DAN
+                const tailieudan = document.querySelectorAll(".tai_lieu_dan");
+                const tailieudandb = document.createElement("div");
+                tailieudan[i].appendChild(tailieudandb);
+                tailieudandb.classList.add("tai_lieu_dandb");
+                tailieudandb.innerText = "none";
 
+            }
         }   
     </script>
 </body>
