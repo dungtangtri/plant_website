@@ -139,7 +139,7 @@ sr.reveal(`.home__img`, { delay: 500 })
 sr.reveal(`.home__search`, { delay: 600 })
 sr.reveal(`.contact__box`, { origin: 'left' })
 sr.reveal(`.contact__form`, { origin: 'right' })
-sr.reveal(`.questions`, {origin:'right'})
+sr.reveal(`.questions`, { origin: 'right' })
 sr.reveal(`.footer`, { interval: 100 })
 
 /*=============== SEARCH BAR ===============*/
