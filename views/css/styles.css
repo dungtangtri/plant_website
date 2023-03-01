@@ -964,83 +964,124 @@ the website, in dark theme
 .ten {
   grid-area: ten;
   border-bottom: .5px solid white;
+  font-weight: bold;
 }
 
 .dang_song {
   grid-area: dang_song;
   border-bottom: .5px solid white;
+  font-weight: bold;
 }
 
 .cong_dung {
   grid-area: cong_dung;
   border-bottom: .5px solid white;
+  font-weight: bold;
 }
 
 .sach_do {
   grid-area: sach_do;
   border-bottom: .5px solid white;
+  font-weight: bold;
 }
 
 .ten_bo {
   grid-area: ten_bo;
   border-bottom: .5px solid white;
+  font-weight: bold;
 }
 
 .ten_bo1 {
   grid-area: ten_bo1;
   border-bottom: .5px solid white;
+  font-weight: bold;
 }
 
 .ten_ho {
   grid-area: ten_ho;
   border-bottom: .5px solid white;
+  font-weight: bold;
 }
 
 .ten_ho1 {
   grid-area: ten_ho1;
   border-bottom: .5px solid white;
+  font-weight: bold;
 }
 
 .ten_chi {
   grid-area: ten_chi;
   border-bottom: .5px solid white;
+  font-weight: bold;
 }
 
 .ten_chi1 {
   grid-area: ten_chi1;
   border-bottom: .5px solid white;
+  font-weight: bold;
 }
 
 .ten_loai {
   grid-area: ten_loai;
   border-bottom: .5px solid white;
+  font-weight: bold;
 }
 
 .dong_danh {
   grid-area: dong_danh;
   border-bottom: .5px solid white;
+  font-weight: bold;
 }
 
 .dac_diem_hinh_thai {
   grid-area: dac_diem_hinh_thai;
   border-bottom: .5px solid white;
+  font-weight: bold;
 }
 
 .dac_diem_sinh_hoc {
   grid-area: dac_diem_sinh_hoc;
   border-bottom: .5px solid white;
+  font-weight: bold;
 }
 
 .phan_bo_dia_ly {
   grid-area: phan_bo_dia_ly;
   border-bottom: .5px solid white;
+  font-weight: bold;
 }
 
 .tinh_trang_bao_ton {
   grid-area: tinh_trang_bao_ton;
   border-bottom: .5px solid white;
+  font-weight: bold;
 }
 
 .tai_lieu_dan {
   grid-area: tai_lieu_dan;
+  font-weight: bold;
+}
+
+.tendb,
+.dang_songdb,
+.cong_dungdb,
+.sach_dodb,
+.ten_bodb,
+.ten_bo1db,
+.ten_hodb,
+.ten_ho1db,
+.ten_chidb,
+.ten_chi1db,
+.ten_loaidb,
+.dong_danhdb {
+  display: inline-flex;
+  font-weight: normal;
+}
+
+.dac_diem_hinh_thaidb,
+.dac_diem_sinh_hocdb,
+.phan_bo_dia_lydb,
+.tinh_trang_bao_tondb,
+.tai_lieu_dandb {
+  font-weight: normal;
 }

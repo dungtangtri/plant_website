@@ -15,7 +15,7 @@
     <!-- FANCYBOX -->
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
 
@@ -61,7 +61,6 @@
                             </script>
                         </div>
                     </li>
-
                 </ul>
 
                 <div class="nav__close" id="nav-close">
@@ -97,63 +96,9 @@
 
                 <div class="home__data">
                     <p class="search-title">Result found!</p>
-                    <div class="grid search-box">
+                    <div class="grid">
                         <div class="plant-grid">
-                            <div class="plant-card" id="pc">
-                                <a data-fancybox href="https://groot-plant.works/images/<%= tree.id  %>"
-                                    class="anh"><img src=" https://groot-plant.works/images/<%= tree.id  %>"></a>
-                                <div class="ten"><strong>Tên:</strong>
-                                    <%= tree.ten %>
-                                </div>
-                                <div class="dang_song"><strong>Dạng Sống:</strong>
-                                    <%= tree.dang_song %>
-                                </div>
-                                <div class="cong_dung"><strong>Công Dụng:</strong>
-                                    <%= tree.cong_dung %>
-                                </div>
-                                <div class="sach_do"><strong>Sách Đỏ:</strong>
-                                    <%= tree.sach_do %>
-                                </div>
-                                <div class="ten_bo"><strong>Tên Bộ:</strong>
-                                    <%= tree.ten_bo %>
-                                </div>
-                                <div class="ten_bo1"><strong>Tên Bộ 1:</strong>
-                                    <%= tree.ten_bo1 %>
-                                </div>
-                                <div class="ten_ho"><strong>Tên Họ:</strong>
-                                    <%= tree.ten_ho %>
-                                </div>
-                                <div class="ten_ho1"><strong>Tên Họ 1:</strong>
-                                    <%= tree.ten_ho1 %>
-                                </div>
-                                <div class="ten_chi"><strong>Tên Chi:</strong>
-                                    <%= tree.ten_chi %>
-                                </div>
-                                <div class="ten_chi1"><strong>Tên Chi 1:</strong>
-                                    <%= tree.ten_chi1 %>
-                                </div>
-                                <div class="ten_loai"><strong>Tên Loài:</strong>
-                                    <%= tree.ten_loai %>
-                                </div>
-                                <div class="dong_danh"><strong>Đồng Danh:</strong>
-                                    <%= tree.dong_danh %>
-                                </div>
-                                <div class="dac_diem_hinh_thai"><strong>Đặc điểm hình thái:</strong>
-                                    <%= tree.dac_diem_hinh_thai %>
-                                </div>
-                                <div class="phan_bo_dia_ly"><strong>Phân bố địa lý:</strong>
-                                    <%= tree.phan_bo_dia_ly %>
-                                </div>
-                                <div class="tinh_trang_bao_ton"><strong>Tình trạng bảo tồn, kinh doanh:</strong>
-                                    <%= tree.tinh_trang_bao_ton %>
-                                </div>
-                                <div class="dac_diem_sinh_hoc"><strong>Đặc điểm sinh học và sinh thái học:</strong>
-                                    <%= tree.dac_diem_sinh_hoc %>
-                                </div>
-                                <div class="tai_lieu_dan"><strong>Tài liệu dẫn:</strong>
-                                    <%= tree.tai_lieu_dan %>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
         </section>
@@ -224,7 +169,243 @@
     <!--=============== MAIN JS ===============-->
     <script src="js/main.js"></script>
 
+    <!--=============== MANY RESULT ===============-->
 
+    <script>
+        const plantsearch = document.querySelector(".plant-grid");
+
+        function addBox() {
+            const plantbox = document.createElement("div");
+            plantbox.classList.add("plant-card");
+
+            const img = document.createElement("a");
+            img.classList.add("anh");
+            img.setAttribute("data-fancybox", "gallery");
+
+            const name = document.createElement("div");
+            name.classList.add("ten");
+            name.innerText = "Tên: ";
+
+            const dangsong = document.createElement("div");
+            dangsong.classList.add("dang_song");
+            dangsong.innerText = "Dạng sống: ";
+
+            const congdung = document.createElement("div");
+            congdung.classList.add("cong_dung");
+            congdung.innerText = "Công dụng: ";
+
+            const sachdo = document.createElement("div");
+            sachdo.classList.add("sach_do");
+            sachdo.innerText = "Sách đỏ: ";
+
+            const tenbo = document.createElement("div");
+            tenbo.classList.add("ten_bo");
+            tenbo.innerText = "Tên bộ: ";
+
+            const tenbo1 = document.createElement("div");
+            tenbo1.classList.add("ten_bo1");
+            tenbo1.innerText = "Tên bộ 1: ";
+
+            const tenho = document.createElement("div");
+            tenho.classList.add("ten_ho");
+            tenho.innerText = "Tên họ: ";
+
+            const tenho1 = document.createElement("div");
+            tenho1.classList.add("ten_ho1");
+            tenho1.innerText = "Tên họ 1: ";
+
+            const tenchi = document.createElement("div");
+            tenchi.classList.add("ten_chi");
+            tenchi.innerText = "Tên chi: ";
+
+            const tenchi1 = document.createElement("div");
+            tenchi1.classList.add("ten_chi1");
+            tenchi1.innerText = "Tên chi 1: ";
+
+            const tenloai = document.createElement("div");
+            tenloai.classList.add("ten_loai");
+            tenloai.innerText = "Tên loài: ";
+
+            const dongdanh = document.createElement("div");
+            dongdanh.classList.add("dong_danh");
+            dongdanh.innerText = "Đồng danh: ";
+
+            const dacdiemhinhthai = document.createElement("div");
+            dacdiemhinhthai.classList.add("dac_diem_hinh_thai");
+            dacdiemhinhthai.innerText = "Đặc điểm hình thái: ";
+
+            const phanbodialy = document.createElement("div");
+            phanbodialy.classList.add("phan_bo_dia_ly");
+            phanbodialy.innerText = "Phân bố địa lý: ";
+
+            const tinhtrangbaoton = document.createElement("div");
+            tinhtrangbaoton.classList.add("tinh_trang_bao_ton");
+            tinhtrangbaoton.innerText = "Tình trạng bảo tồn: ";
+
+            const dacdiemsinhhoc = document.createElement("div");
+            dacdiemsinhhoc.classList.add("dac_diem_sinh_hoc");
+            dacdiemsinhhoc.innerText = "Đặc điểm sinh học: ";
+
+            const tailieudan = document.createElement("div");
+            tailieudan.classList.add("tai_lieu_dan");
+            tailieudan.innerText = "Tài liệu dẫn: ";
+
+            plantsearch.appendChild(plantbox);
+            plantbox.appendChild(name);
+            plantbox.appendChild(img);
+            plantbox.appendChild(dangsong);
+            plantbox.appendChild(congdung);
+            plantbox.appendChild(sachdo);
+            plantbox.appendChild(tenbo);
+            plantbox.appendChild(tenbo1);
+            plantbox.appendChild(tenho);
+            plantbox.appendChild(tenho1);
+            plantbox.appendChild(tenchi);
+            plantbox.appendChild(tenchi1);
+            plantbox.appendChild(tenloai);
+            plantbox.appendChild(dongdanh);
+            plantbox.appendChild(dacdiemhinhthai);
+            plantbox.appendChild(phanbodialy);
+            plantbox.appendChild(tinhtrangbaoton);
+            plantbox.appendChild(dacdiemsinhhoc);
+            plantbox.appendChild(tailieudan);
+        }
+
+        // return number of box based on number of search results by server
+        const num = 1;
+        for (var i = 0; i < num; i++) {
+
+            // ADD BOX
+            addBox();
+
+            // ADD IMAGE
+            const imgdb = document.querySelectorAll(".anh");
+            imgdb[i].href = "https://groot-plant.works/images/50";
+            const imgcover = document.createElement("img");
+            imgdb[i].appendChild(imgcover);
+            imgcover.src = "https://groot-plant.works/images/50";
+
+            // ADD NAME
+            const ten = document.querySelectorAll(".ten");
+            const tendb = document.createElement("div");
+            ten[i].appendChild(tendb);
+            tendb.classList.add("tendb");
+            tendb.innerText = "Bàng";
+
+            // ADD DANG SONG
+            const dangsong = document.querySelectorAll(".dang_song");
+            const dangsongdb = document.createElement("div");
+            dangsong[i].appendChild(dangsongdb);
+            dangsongdb.classList.add("dang_songdb");
+            dangsongdb.innerText = "MM";
+
+            // ADD CONG DUNG
+            const congdung = document.querySelectorAll(".cong_dung");
+            const congdungdb = document.createElement("div");
+            congdung[i].appendChild(congdungdb);
+            congdungdb.classList.add("cong_dungdb");
+            congdungdb.innerText = "G,T,C";
+
+            // ADD SACH DO
+            const sachdo = document.querySelectorAll(".sach_do");
+            const sachdodb = document.createElement("div");
+            sachdo[i].appendChild(sachdodb);
+            sachdodb.classList.add("sach_dodb");
+            sachdodb.innerText = "none";
+
+            // ADD TEN BO
+            const tenbo = document.querySelectorAll(".ten_bo");
+            const tenbodb = document.createElement("div");
+            tenbo[i].appendChild(tenbodb);
+            tenbodb.classList.add("ten_bodb");
+            tenbodb.innerText = "Myrtales";
+
+            // ADD TEN BO 1
+            const tenbo1 = document.querySelectorAll(".ten_bo1");
+            const tenbo1db = document.createElement("div");
+            tenbo1[i].appendChild(tenbo1db);
+            tenbo1db.classList.add("ten_bo1db");
+            tenbo1db.innerText = "Bộ Sim";
+
+            // ADD TEN HO
+            const tenho = document.querySelectorAll(".ten_ho");
+            const tenhodb = document.createElement("div");
+            tenho[i].appendChild(tenhodb);
+            tenhodb.classList.add("ten_hodb");
+            tenhodb.innerText = "Combretaceae";
+
+            // ADD TEN HO 1
+            const tenho1 = document.querySelectorAll(".ten_ho1");
+            const tenho1db = document.createElement("div");
+            tenho1[i].appendChild(tenho1db);
+            tenho1db.classList.add("ten_ho1db");
+            tenho1db.innerText = "Họ bàng";
+
+            // ADD TEN CHI
+            const tenchi = document.querySelectorAll(".ten_chi");
+            const tenchidb = document.createElement("div");
+            tenchi[i].appendChild(tenchidb);
+            tenchidb.classList.add("ten_chidb");
+            tenchidb.innerText = "Terminalia";
+
+            // ADD TEN CHI 1
+            const tenchi1 = document.querySelectorAll(".ten_chi1");
+            const tenchi1db = document.createElement("div");
+            tenchi1[i].appendChild(tenchi1db);
+            tenchi1db.classList.add("ten_chi1db");
+            tenchi1db.innerText = "Chò";
+
+            // ADD TEN LOAI
+            const tenloai = document.querySelectorAll(".ten_loai");
+            const tenloaidb = document.createElement("div");
+            tenloai[i].appendChild(tenloaidb);
+            tenloaidb.classList.add("ten_loaidb");
+            tenloaidb.innerText = "Terminalia Catappa - L.";
+
+            // ADD DONG DANH
+            const dongdanh = document.querySelectorAll(".dong_danh");
+            const dongdanhdb = document.createElement("div");
+            dongdanh[i].appendChild(dongdanhdb);
+            dongdanhdb.classList.add("dong_danhdb");
+            dongdanhdb.innerText = "none";
+
+            // ADD DAC DIEM HINH THAI
+            const dacdiemhinhthai = document.querySelectorAll(".dac_diem_hinh_thai");
+            const dacdiemhinhthaidb = document.createElement("div");
+            dacdiemhinhthai[i].appendChild(dacdiemhinhthaidb);
+            dacdiemhinhthaidb.classList.add("dac_diem_hinh_thaidb");
+            dacdiemhinhthaidb.innerText = "Cây gỗ rụng lá, thân không thẳng, gốc có u bướu, cao 10-25 m, đường kính 35-70 cm; tán hình ô phân thành nhiều tầng, màu xanh thẫm điểm các lá già màu nâu đỏ. Lá đơn nguyên mọc cách, tập trung ở đấu cành, phiến lá hình trứng ngược, đầu tròn có một mũi ngắn. Gân bên 7-9 đôi nổi rõ ở mặt dưới, hơi có lông hung, cuống lá có lông. Cụm hoa hình bông mọc ở đầu cành hay nách lá, dài 10-15 cm mang nhiều hoa. Hoa nhỏ, tạp tính, thường mẫu 5, ít khi 4, màu trắng xanh. Hoa lưỡng tính ở gốc, hoa đực ở ngọn. Cánh đài hợp hình ống dài 1,5 mm, có 5 răng ngắn. Không cánh tràng. Nhị đực 10, xếp 2 vòng, có đĩa làm thành một vòng. Hoa lưỡng tính có bầu hạ 1 ô và 2 noãn đảo. Quả hình bầu dục dẹt, nhẵn bóng, có gờ nhỏ rộng 1-1,2 mm viền quanh, lúc non màu xanh lục nhạt, lúc chín màu vàng, vỏ quả nạt có xơ, vị ngọt.";
+
+            // ADD DAC DIEM SINH HOC
+            const dacdiemsinhhoc = document.querySelectorAll(".dac_diem_sinh_hoc");
+            const dacdiemsinhhocdb = document.createElement("div");
+            dacdiemsinhhoc[i].appendChild(dacdiemsinhhocdb);
+            dacdiemsinhhocdb.classList.add("dac_diem_sinh_hocdb");
+            dacdiemsinhhocdb.innerText = "none";
+
+            // ADD PHAN BO DIA LY
+            const phanbodialy = document.querySelectorAll(".phan_bo_dia_ly");
+            const phanbodialydb = document.createElement("div");
+            phanbodialy[i].appendChild(phanbodialydb);
+            phanbodialydb.classList.add("phan_bo_dia_lydb");
+            phanbodialydb.innerText = "Rộng rãi từ bắc vào nam Việt Nam; Còn có ở Đông dương, Trung quốc, Thái lan, Mianmar, Philippin, Malaisia, New Guinê,.. Tại Phú Thọ bàng phân bố ở rừng quốc gia Đền Hùng.";
+
+            // ADD TINH TRANG BAO TON
+            const tinhtrangbaoton = document.querySelectorAll(".tinh_trang_bao_ton");
+            const tinhtrangbaotondb = document.createElement("div");
+            tinhtrangbaoton[i].appendChild(tinhtrangbaotondb);
+            tinhtrangbaotondb.classList.add("tinh_trang_bao_tondb");
+            tinhtrangbaotondb.innerText = "none";
+
+            // ADD TAI LIEU DAN
+            const tailieudan = document.querySelectorAll(".tai_lieu_dan");
+            const tailieudandb = document.createElement("div");
+            tailieudan[i].appendChild(tailieudandb);
+            tailieudandb.classList.add("tai_lieu_dandb");
+            tailieudandb.innerText = "none";
+
+        }   
+    </script>
 </body>
 
 </html>
