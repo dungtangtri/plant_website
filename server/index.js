@@ -49,7 +49,7 @@ app.set('view engine', 'ejs');
 var RateLimit = require('express-rate-limit');
 var limiter = RateLimit({
   windowMs: 1 * 60 * 1000, // 1 minute
-  max: 10,
+  max: 20,
   message: "Too many requests, please try again after 1 minute! "
 });
 app.use(limiter);

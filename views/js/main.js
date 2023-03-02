@@ -170,9 +170,11 @@ form.addEventListener('submit', async (e) => {
         alert("Please input at least 2 characters");
         return false;
     }
-    const searchTerm = input.value;
-    window.location.href = `/search?q=${searchTerm}`;
-});
+// dùng encodeURI để thay thế các ký tự nhất định để back-end có thể xử lý được
+        const searchTerm = encodeURIComponent(input.value.replace(" ", "%"));
+        window.location.href = `/search?q=${searchTerm}`;
+    }
+);
 
 /*=============== LOGIN ===============*/
 const login = document.getElementById('login')

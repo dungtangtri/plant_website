@@ -9,11 +9,13 @@ async function searchPlants(searchTerm) {
     await connection.connect();
     const result = await connection.request()
       .input('searchTerm', sql.NVarChar, searchTerm)
-      .query(`SELECT * FROM plants WHERE CONTAINS (Name, @searchTerm)`);
+      .query(`SELECT * FROM plants WHERE CONTAINS (Name, N'${searchTerm}')`);
+      console.log(searchTerm);
     return result.recordset;
   } catch (err) {
     console.error(err);
   }
+  
 }
 
 router.get('/search', async (req, res) => {
@@ -47,7 +49,8 @@ router.get('/search', async (req, res) => {
         tinh_trang_bao_ton: searchResults[0]['Tình trạng bảo tồn, kinh doanh'],
         tai_lieu_dan: searchResults[0]['Tài liệu dẫn'],
         name: req.user.username,
-        status: true
+        status: true,
+        number : searchResults.length
       };
       for(let i = 1; i < searchResults.length; i++ ){
         tree[`id${i}`] = searchResults[i]['ID'];
@@ -97,7 +100,8 @@ router.get('/search', async (req, res) => {
         tinh_trang_bao_ton: searchResults[0]['Tình trạng bảo tồn, kinh doanh'],
         tai_lieu_dan: searchResults[0]['Tài liệu dẫn'],
         name: "user",
-        status: false
+        status: false,
+        number : searchResults.length
       };
       for(let i = 1; i < searchResults.length; i++ ){
         tree[`id${i}`] = searchResults[i]['ID'];

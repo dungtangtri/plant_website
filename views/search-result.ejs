@@ -272,20 +272,20 @@
         }
 
         // return number of box based on number of search results by server
-        const num = 0;
-        if (num == 0){
+        const num = <%= tree.number %>;
+        if (num == 0) {
             const searchtitle = document.querySelector(".search-title");
-            searchtitle.innerText="No result found!";
+            searchtitle.innerText = "No result found!";
         }
         else {
-            for (var i = 0; i < num; i++) {
+            <% for (var i = 0; i < 4; i++) { %>
 
                 // ADD BOX
                 addBox();
 
                 // ADD IMAGE
                 const imgdb = document.querySelectorAll(".anh");
-                imgdb[i].href = "https://groot-plant.works/images/50";
+                imgdb[i].href = "https://groot-plant.works/images/<%= tree.id  %>";
                 const imgcover = document.createElement("img");
                 imgdb[i].appendChild(imgcover);
                 imgcover.src = "https://groot-plant.works/images/50";
@@ -409,7 +409,7 @@
                 tailieudandb.classList.add("tai_lieu_dandb");
                 tailieudandb.innerText = "none";
 
-            }
+<%} %>
         }   
     </script>
 </body>
