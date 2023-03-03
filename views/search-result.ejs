@@ -98,9 +98,67 @@
                     <p class="search-title">Result found!</p>
                     <div class="grid">
                         <div class="plant-grid">
-
-                        </div>
-                    </div>
+                            <div class="grid search-box">
+                                <div class="plant-grid">
+                                    <div class="plant-card" id="pc">
+                                        <a data-fancybox href="https://groot-plant.works/images/<%= tree.id  %>"
+                                            class="anh"><img
+                                                src=" https://groot-plant.works/images/<%= tree.id  %>"></a>
+                                        <div class="ten"><strong>Tên:</strong>
+                                            <%= tree.ten %>
+                                        </div>
+                                        <div class="dang_song"><strong>Dạng Sống:</strong>
+                                            <%= tree.dang_song %>
+                                        </div>
+                                        <div class="cong_dung"><strong>Công Dụng:</strong>
+                                            <%= tree.cong_dung %>
+                                        </div>
+                                        <div class="sach_do"><strong>Sách Đỏ:</strong>
+                                            <%= tree.sach_do %>
+                                        </div>
+                                        <div class="ten_bo"><strong>Tên Bộ:</strong>
+                                            <%= tree.ten_bo %>
+                                        </div>
+                                        <div class="ten_bo1"><strong>Tên Bộ 1:</strong>
+                                            <%= tree.ten_bo1 %>
+                                        </div>
+                                        <div class="ten_ho"><strong>Tên Họ:</strong>
+                                            <%= tree.ten_ho %>
+                                        </div>
+                                        <div class="ten_ho1"><strong>Tên Họ 1:</strong>
+                                            <%= tree.ten_ho1 %>
+                                        </div>
+                                        <div class="ten_chi"><strong>Tên Chi:</strong>
+                                            <%= tree.ten_chi %>
+                                        </div>
+                                        <div class="ten_chi1"><strong>Tên Chi 1:</strong>
+                                            <%= tree.ten_chi1 %>
+                                        </div>
+                                        <div class="ten_loai"><strong>Tên Loài:</strong>
+                                            <%= tree.ten_loai %>
+                                        </div>
+                                        <div class="dong_danh"><strong>Đồng Danh:</strong>
+                                            <%= tree.dong_danh %>
+                                        </div>
+                                        <div class="dac_diem_hinh_thai"><strong>Đặc điểm hình thái:</strong>
+                                            <%= tree.dac_diem_hinh_thai %>
+                                        </div>
+                                        <div class="phan_bo_dia_ly"><strong>Phân bố địa lý:</strong>
+                                            <%= tree.phan_bo_dia_ly %>
+                                        </div>
+                                        <div class="tinh_trang_bao_ton"><strong>Tình trạng bảo tồn, kinh doanh:</strong>
+                                            <%= tree.tinh_trang_bao_ton %>
+                                        </div>
+                                        <div class="dac_diem_sinh_hoc"><strong>Đặc điểm sinh học và sinh thái
+                                                học:</strong>
+                                            <%= tree.dac_diem_sinh_hoc %>
+                                        </div>
+                                        <div class="tai_lieu_dan"><strong>Tài liệu dẫn:</strong>
+                                            <%= tree.tai_lieu_dan %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
         </section>
 
     </main>
@@ -285,10 +343,10 @@
 
                 // ADD IMAGE
                 const imgdb = document.querySelectorAll(".anh");
-                imgdb[i].href = "https://groot-plant.works/images/<%= tree.id  %>";
+                imgdb[i].href = "https://groot-plant.works/images/<%= tree.id %>";
                 const imgcover = document.createElement("img");
                 imgdb[i].appendChild(imgcover);
-                imgcover.src = "https://groot-plant.works/images/50";
+                imgcover.src = "https://groot-plant.works/images/<%= tree.id %>";
 
                 // ADD NAME
                 const ten = document.querySelectorAll(".ten");
