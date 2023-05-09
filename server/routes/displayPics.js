@@ -3,7 +3,7 @@ const router = express.Router();
 const sql = require('mssql');
 const config = require('../db/connection').config;
 
-
+//Saving image as binary then retrieve them
 router.get('/images/:id', (req, res) => {
     const id = req.params.id;
     const connection = new sql.ConnectionPool(config, (err) => {

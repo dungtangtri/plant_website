@@ -42,10 +42,12 @@ passport.use(new LocalStrategy((username, password, done) => {
 }));
 
 
-// Serialize and deserialize the user object for passport
+// Define which data should be serialized to the session. Normally it is User's ID
 passport.serializeUser((user, done) => {
   done(null, user.id);
 });
+//used to retrieve the stored user data from the session and attach it to the req.user object
+//This method is called on every request to deserialize the user data, which can then be used to authenticate and authorize the user's access to certain resources.
 passport.deserializeUser((id, done) => {
   sql.connect(config, (err) => {
     if (err) {
